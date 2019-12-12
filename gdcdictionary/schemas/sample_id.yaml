@@ -1,0 +1,68 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "sample_id"
+title: Sample ID
+type: object
+category: administrative
+program: '*'
+project: '*'
+description: >
+  Additional ID used to identify sample.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+
+links:
+  - name: samples
+    backref: sample_ids
+    label: identifies
+    target_type: sample
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - samples
+  - id_type
+  - value
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    enum: [ "sample_id" ]
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  state:
+    $ref: "_definitions.yaml#/state"
+  submitter_id:
+    type:
+      - string
+      - "null"
+  id_type:
+    enum:
+      - DCC Barcode ID
+      - DCC-Assigned Sample ID
+      - Local Sample ID
+  value:
+    description: "Alphanumeric value identifying an individual sample."
+    type: string
+  samples:
+    $ref: "_definitions.yaml#/to_one"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"

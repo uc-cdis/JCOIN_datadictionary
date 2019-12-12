@@ -1,0 +1,150 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "sample"
+title: Sample
+type: object
+namespace: http://gdc.nci.nih.gov
+category: biospecimen
+program: '*'
+project: '*'
+description: >
+  Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment
+  or research purposes, including a sample obtained from a living organism or taken from the
+  biological object after halting of all its life functions. Biospecimen can contain one or more
+  components including but not limited to cellular molecules, cells, tissues, organs, body fluids,
+  embryos, and body excretory products.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+required:
+  - submitter_id
+  - type
+  - cases
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+links:
+  - name: cases
+    backref: samples
+    label: derived_from
+    target_type: case
+    multiplicity: many_to_one
+    required: true
+
+# For additional properties and possible values, see original version of this file
+properties:
+  type:
+    type: string
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  state:
+    $ref: "_definitions.yaml#/state"
+  submitter_id:
+    type:
+      - string
+      - "null"
+    description: >
+      For samples collected by the IBDGC, should ideally be a DCC-generated
+      barcode. Otherwise, will vary across projects and centers.
+  biospecimen_anatomic_site:
+    term:
+      $ref: "_terms.yaml#/biospecimen_anatomic_site"
+    enum:
+      - Ascending Colon
+      - Ascending Colon Hepatic Flexure
+      - Blood
+      - Bowel
+      - Cecum
+      - Cell-Line
+      - Colon
+      - Colon - Mucosa Only
+      - Descending Colon
+      - Duodenum
+      - Ileum
+      - Mesentery
+      - Transverse Colon
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  composition:
+    term:
+      $ref: "_terms.yaml#/composition"
+    enum:
+      - Derived Cell Line
+      - Peripheral Whole Blood
+      - Serum
+      - Saliva
+      - Solid Tissue
+      - Stool
+      - Urine
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  days_to_collection:
+    term:
+      $ref: "_terms.yaml#/days_to_collection"
+    type: integer
+  method_of_sample_procurement:
+    term:
+      $ref: "_terms.yaml#/method_of_sample_procurement"
+    enum:
+      - Blood Draw
+      - Endoscopic Biopsy
+      - Other
+      - Surgical Resection
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  preservation_method:
+    term:
+      $ref: "_terms.yaml#/preservation_method"
+    enum:
+      - Cryopreserved
+      - FFPE
+      - Fresh
+      - OCT
+      - Snap Frozen
+      - Frozen
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  sample_type:
+    description: "Characterization of the sample as either clinical or contrived."
+    enum:
+      - Cell Lines
+      - DNA
+      - FFPE Scrolls
+      - RNA
+      - Slides
+      - Solid Tissue
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  tissue_type:
+    term:
+      $ref: "_terms.yaml#/tissue_type"
+    enum:
+      - Normal
+      - Abnormal
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  cases:
+    $ref: "_definitions.yaml#/to_one"
+  project_id:
+    type: string
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
