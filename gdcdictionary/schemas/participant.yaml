@@ -1,6 +1,6 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "case"
+id: "participant"
 title: Participant
 type: object
 namespace: http://gdc.nci.nih.gov
