@@ -45,9 +45,10 @@ properties:
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
+
   protocol:
     description: >
-    blank
+        blank
     enum:
       -  "State Policy Rollouts"
       -  "MOUD Comparative Effectiveness"
@@ -55,7 +56,7 @@ properties:
 
   components: 
     description: >
-    blank
+        blank
     enum:
       - "Drug Courts"
       - "Jails"
