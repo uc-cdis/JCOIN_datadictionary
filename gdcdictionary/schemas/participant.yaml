@@ -32,13 +32,13 @@ links:
 required:
   - submitter_id
   - type
-  - centers
+  - protocols
 
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-# Case properties
+# Protocol properties
 properties:
   type:
     type: string
