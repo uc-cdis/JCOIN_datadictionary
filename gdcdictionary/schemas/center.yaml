@@ -355,4 +355,4 @@ properties:
       - Mostly false
       - Definitively false
   follow_ups:
-    $ref: "_definitions.yaml#/to_many_project"
+    $ref: "_definitions.yaml#/to_one"
