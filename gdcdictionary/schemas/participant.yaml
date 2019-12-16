@@ -23,7 +23,7 @@ systemProperties:
 
 links:
   - name: projects
-    backref: projects
+    backref: participants
     label: recruited_at
     target_type: project
     multiplicity: many_to_one
