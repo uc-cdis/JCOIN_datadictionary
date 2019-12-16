@@ -16,9 +16,9 @@ validators: null
 systemProperties:
   - id
   - project_id
+  - state
   - created_datetime
   - updated_datetime
-  - state
 
 links:
   - name: follow_ups
