@@ -36,7 +36,7 @@ links:
 required:
   - submitter_id
   - type
-  - subjects
+  - participants
 
 uniqueKeys:
   - [id]
