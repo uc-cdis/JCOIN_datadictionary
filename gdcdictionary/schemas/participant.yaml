@@ -63,4 +63,3 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
-© 2019 GitHub, Inc.
