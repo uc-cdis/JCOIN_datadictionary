@@ -32,8 +32,6 @@ required:
   - submitter_id
   - type
   - follow_ups
-  - name
-  - investigator_name
 
 uniqueKeys:
   - [ id ]
@@ -63,9 +61,3 @@ properties:
       - "null"
   follow_ups:
     $ref: "_definitions.yaml#/to_many_project"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"
