@@ -45,22 +45,27 @@ properties:
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
-  name:
+  protocol:
+    description: >
+    blank
+    enum:
+      -  "State Policy Rollouts"
+      -  "MOUD Comparative Effectiveness"
+      -  "Linkage"
+
+  components: 
+    description: >
+    blank
+    enum:
+      - "Drug Courts"
+      - "Jails"
+      - "Probation/Parole"
+
+  research_question:
     type: string
     description: >
-      Name of center at which participants were recruited and/or at which data
-      were collected.
-  investigator_name:
-    type: string
-    description: >
-      Name of the principal investigator responsible for recruiting participants
-      and/or submitting data.
-  state:
-    $ref: "_definitions.yaml#/state"
-  submitter_id:
-    type:
-      - string
-      - "null"
+      blank
+  
   projects:
     $ref: "_definitions.yaml#/to_many_project"
   project_id:
