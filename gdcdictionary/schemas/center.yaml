@@ -15,7 +15,7 @@ validators: null
 
 systemProperties:
   - id
-  - follow_up_id
+  - project_id
   - created_datetime
   - updated_datetime
   - state
