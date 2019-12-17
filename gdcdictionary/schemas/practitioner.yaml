@@ -42,25 +42,7 @@ uniqueKeys:
 properties:
 $ref: "_definitions.yaml#/ubiquitous_properties"
 
-demographic:
-    description: >
-      tbd
-    type: boolean 
 
-knowledge:
-    description: >
-      tbd
-    type: boolean 
-  
-sustainability:
-    description: >
-      tbd
-    type: boolean 
-  
-accountability:
-    description: >
-      tbd
-    type: boolean 
     
 centers:
   $ref: "_definitions.yaml#/to_one"
