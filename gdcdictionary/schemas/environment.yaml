@@ -43,6 +43,26 @@ properties:
   
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  order_detailed:
+    description: >
+      tbd
+    type: integer
+
+  product_id:
+    description: >
+      tbd
+    type: integer 
+
+  other_id:  
+    description: >
+      tbd
+    type: integer
+
+  product_quantity:  
+    description: >
+      tbd
+    type: integer
+
   protocols:
     $ref: "_definitions.yaml#/to_one"
   project_id:
