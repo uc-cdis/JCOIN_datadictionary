@@ -40,15 +40,15 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  genhl:
+  recovery_support_service:
     description: >
-      Subject perception about his current health.
-    enum:
-      - Excellent
-      - Very Good
-      - Good
-      - Fair
-      - Poor
+      tbd
+    type: boolean 
 
+  relapse:
+    description: >
+      tbd
+    type: boolean 
+  
   follow_ups:
     $ref: "_definitions.yaml#/to_one"
