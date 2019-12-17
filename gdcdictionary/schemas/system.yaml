@@ -45,13 +45,18 @@ properties:
 
   cost:
     description: >
-      blank
+      tbd
     enum:
       -  "Personnel Staff Time"
       -  "Travel"
       -  "Supplies"
       -  "Meeting Space"
       -  "Miscellaneous"
+
+  qaly:
+    description: >
+      tbd
+    type: integer
 
   protocols:
     $ref: "_definitions.yaml#/to_one"
