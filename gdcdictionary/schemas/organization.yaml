@@ -41,26 +41,6 @@ uniqueKeys:
 # Protocol properties
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
-  
-  organizational support:
-    description: >
-        tbd
-    type: boolean
-
-  referral:
-    description: >
-        tbd
-    type: boolean
-
-  interagency organizational features:
-    description: >
-        tbd
-    type: boolean
-
-  policy:
-    description: >
-        tbd
-    type: boolean
 
   protocols:
     $ref: "_definitions.yaml#/to_one"
