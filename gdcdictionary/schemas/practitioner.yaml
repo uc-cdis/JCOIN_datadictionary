@@ -4,7 +4,7 @@ id: "practitioner"
 title: Practitioner
 type: object
 namespace: http://gdc.nci.nih.gov
-category: administrative
+category: clinical
 program: '*'
 project: '*'
 description: >
@@ -38,11 +38,9 @@ uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-# Case properties
+#Practitioner properties
 properties:
 $ref: "_definitions.yaml#/ubiquitous_properties"
-
-
     
 centers:
   $ref: "_definitions.yaml#/to_one"
