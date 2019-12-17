@@ -38,7 +38,6 @@ uniqueKeys:
 
 # Protocol properties
 properties:
-  $ref: "_definitions.yaml#/ubiquitous_properties"
   
   submitter_id:
     type:
