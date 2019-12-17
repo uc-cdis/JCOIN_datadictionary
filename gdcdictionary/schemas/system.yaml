@@ -38,11 +38,7 @@ uniqueKeys:
 
 # Protocol properties
 properties:
-  type:
-    type: string
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
+  $ref: "_definitions.yaml#/ubiquitous_properties"
   
   submitter_id:
     type:
