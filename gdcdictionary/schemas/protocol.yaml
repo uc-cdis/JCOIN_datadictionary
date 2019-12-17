@@ -32,14 +32,13 @@ required:
   - submitter_id
   - type
   - projects
-  - name
-  - investigator_name
 
 uniqueKeys:
   - [ id ]
   - [ project_id, submitter_id ]
 
 properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
 
   protocol:
     description: >
