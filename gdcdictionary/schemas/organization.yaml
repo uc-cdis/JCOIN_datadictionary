@@ -42,10 +42,6 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
   
-  submitter_id:
-    type:
-      - string
-      - "null"
   organizational support:
     description: >
         tbd
@@ -68,9 +64,3 @@ properties:
 
   protocols:
     $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"
