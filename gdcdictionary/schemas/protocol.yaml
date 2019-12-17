@@ -40,11 +40,6 @@ uniqueKeys:
   - [ project_id, submitter_id ]
 
 properties:
-  type:
-    enum: [ "center" ]
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
 
   protocol:
     description: >
