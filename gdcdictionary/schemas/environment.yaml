@@ -40,21 +40,9 @@ uniqueKeys:
 
 # Protocol properties
 properties:
-  type:
-    type: string
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
-  state:
-    $ref: "_definitions.yaml#/state"
-  submitter_id:
-    type:
-      - string
-      - "null"
-  consent_codes:
-    type: array
-    items:
-      type: string
+  
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
   protocols:
     $ref: "_definitions.yaml#/to_one"
   project_id:
