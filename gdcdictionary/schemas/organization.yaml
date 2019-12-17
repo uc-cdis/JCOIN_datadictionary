@@ -51,10 +51,26 @@ properties:
     type:
       - string
       - "null"
-  consent_codes:
-    type: array
-    items:
-      type: string
+  organizational support:
+    description: >
+        tbd
+    type: boolean
+
+  referral:
+    description: >
+        tbd
+    type: boolean
+
+  interagency organizational features:
+    description: >
+        tbd
+    type: boolean
+
+  policy:
+    description: >
+        tbd
+    type: boolean
+
   protocols:
     $ref: "_definitions.yaml#/to_one"
   project_id:
