@@ -51,7 +51,7 @@ properties:
 
   cost:
     description: >
-        blank
+      blank
     enum:
       -  "Personnel Staff Time"
       -  "Travel"
@@ -61,17 +61,17 @@ properties:
 
   qaly:
     description: >
-        blank
+      blank
     type: integer
 
   abstinent year:
     description: >
-        blank
+      blank
     type: integer 
 
   incremental cost-effectiveness ratio:  
     description: >
-        blank
+      blank
     type: integer
 
   protocols:
