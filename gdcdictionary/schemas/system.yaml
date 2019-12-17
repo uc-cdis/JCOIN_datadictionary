@@ -51,10 +51,34 @@ properties:
     type:
       - string
       - "null"
-  consent_codes:
-    type: array
-    items:
-      type: string
+
+  cost:
+    description: >
+        blank
+    enum:
+      -  "Personnel/Staff Time"
+      -  "Travel"
+      -  "Supplies"
+      -  "Meeting Space"
+      -  "Miscellaneous"
+
+  qaly:
+    description: >
+        blank
+    enum:
+      -  "blank"
+      -  "blank"  
+
+  abstinent year:
+    description: >
+        blank
+    type: integer 
+
+  incremental cost-effectiveness ratio:  
+    description: >
+        blank
+    type: integer
+
   protocols:
     $ref: "_definitions.yaml#/to_one"
   project_id:
