@@ -18,6 +18,8 @@ systemProperties:
   - id
   - project_id
   - state
+  - created_datetime
+  - updated_datetime
 
 links:
   - name: protocols
@@ -38,12 +40,9 @@ uniqueKeys:
 
 # Protocol properties
 properties:
-  
-  submitter_id:
-    type:
-      - string
-      - "null"
 
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+  
   cost:
     description: >
       blank
@@ -71,9 +70,3 @@ properties:
 
   protocols:
     $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-   created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"
