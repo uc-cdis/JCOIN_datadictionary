@@ -53,7 +53,7 @@ properties:
     description: >
         blank
     enum:
-      -  "Personnel/Staff Time"
+      -  "Personnel Staff Time"
       -  "Travel"
       -  "Supplies"
       -  "Meeting Space"
