@@ -42,7 +42,7 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  organizational support:
+  organizational_support:
     description: >
         tbd
     type: boolean
