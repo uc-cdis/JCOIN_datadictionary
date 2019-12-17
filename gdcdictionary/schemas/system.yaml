@@ -58,5 +58,15 @@ properties:
       tbd
     type: integer
 
+  abstinent_year:
+    description: >
+      tbd
+    type: integer 
+
+  incremental_cost_effectiveness_ratio:  
+    description: >
+      tbd
+    type: integer
+
   protocols:
     $ref: "_definitions.yaml#/to_one"
