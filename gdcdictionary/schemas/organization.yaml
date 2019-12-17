@@ -47,5 +47,20 @@ properties:
         tbd
     type: boolean
 
+  referral:
+    description: >
+        tbd
+    type: boolean
+
+  interagency_organizational_features:
+    description: >
+        tbd
+    type: boolean
+
+  policy:
+    description: >
+        tbd
+    type: boolean
+
   protocols:
     $ref: "_definitions.yaml#/to_one"
