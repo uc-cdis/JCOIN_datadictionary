@@ -40,26 +40,26 @@ uniqueKeys:
 
 # Case properties
 properties:
-  type:
-    type: string
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
-  state:
-    $ref: "_definitions.yaml#/state"
-  submitter_id:
-    type:
-      - string
-      - "null"
-  consent_codes:
-    type: array
-    items:
-      type: string
-  centers:
-    $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"
+
+demographic:
+    description: >
+      tbd
+    type: boolean 
+
+knowledge:
+    description: >
+      tbd
+    type: boolean 
+  
+sustainability:
+    description: >
+      tbd
+    type: boolean 
+  
+accountability:
+    description: >
+      tbd
+    type: boolean 
+    
+centers:
+  $ref: "_definitions.yaml#/to_one"
