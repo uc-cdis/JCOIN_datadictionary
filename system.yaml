@@ -1,0 +1,72 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "system"
+title: System
+type: object
+namespace: http://gdc.nci.nih.gov
+category: administrative
+program: '*'
+project: '*'
+description: >
+  The collection of all data related to a specific participant in the
+  context of a specific project.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: protocols
+    backref: systems
+    label: recruited_at
+    target_type: protocol
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - protocols
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+# Protocol properties
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  cost:
+    description: >
+      blank
+    enum:
+      -  "Personnel Staff Time"
+      -  "Travel"
+      -  "Supplies"
+      -  "Meeting Space"
+      -  "Miscellaneous"
+
+  qaly:
+    description: >
+      blank
+    type: integer
+
+  abstinent_year:
+    description: >
+      blank
+    type: integer 
+
+  incremental_cost_effectiveness_ratio:  
+    description: >
+      blank
+    type: integer
+
+  protocols:
+    $ref: "_definitions.yaml#/to_one"
