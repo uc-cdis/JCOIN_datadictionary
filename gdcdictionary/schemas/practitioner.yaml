@@ -40,6 +40,7 @@ uniqueKeys:
 
 # Case properties
 properties:
+$ref: "_definitions.yaml#/ubiquitous_properties"
 
 demographic:
     description: >
