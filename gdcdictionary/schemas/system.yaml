@@ -17,8 +17,6 @@ validators: null
 systemProperties:
   - id
   - project_id
-  - created_datetime
-  - updated_datetime
   - state
 
 links:
@@ -64,8 +62,7 @@ properties:
   qaly:
     description: >
         blank
-    enum:
-      -  "blank"
+    type: integer
 
   abstinent year:
     description: >
@@ -81,7 +78,3 @@ properties:
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"
