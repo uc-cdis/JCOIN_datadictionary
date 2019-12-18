@@ -1,13 +1,15 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "sample_id"
-title: Sample ID
+id: "participant"
+title: Participant
 type: object
+namespace: http://gdc.nci.nih.gov
 category: administrative
 program: '*'
 project: '*'
 description: >
-  Additional ID used to identify sample.
+  The collection of all data related to a specific participant in the
+  context of a specific project.
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,27 +22,26 @@ systemProperties:
   - state
 
 links:
-  - name: samples
-    backref: sample_ids
-    label: identifies
-    target_type: sample
+  - name: protocols
+    backref: participants
+    label: recruited_at
+    target_type: protocol
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - samples
-  - id_type
-  - value
+  - protocols
 
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
+# Protocol properties
 properties:
   type:
-    enum: [ "sample_id" ]
+    type: string
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
@@ -50,15 +51,11 @@ properties:
     type:
       - string
       - "null"
-  id_type:
-    enum:
-      - DCC Barcode ID
-      - DCC-Assigned Sample ID
-      - Local Sample ID
-  value:
-    description: "Alphanumeric value identifying an individual sample."
-    type: string
-  samples:
+  consent_codes:
+    type: array
+    items:
+      type: string
+  protocols:
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"

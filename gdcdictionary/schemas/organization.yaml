@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "case"
-title: Participant
+id: "organization"
+title: Organization
 type: object
 namespace: http://gdc.nci.nih.gov
 category: administrative
@@ -22,44 +22,45 @@ systemProperties:
   - state
 
 links:
-  - name: centers
-    backref: cases
+  - name: protocols
+    backref: organizations
     label: recruited_at
-    target_type: center
+    target_type: protocol
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - centers
+  - protocols
 
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-# Case properties
+# Protocol properties
 properties:
-  type:
-    type: string
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
-  state:
-    $ref: "_definitions.yaml#/state"
-  submitter_id:
-    type:
-      - string
-      - "null"
-  consent_codes:
-    type: array
-    items:
-      type: string
-  centers:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  organizational_support:
+    description: >
+        tbd
+    type: boolean
+
+  referral:
+    description: >
+        tbd
+    type: boolean
+
+  interagency_organizational_features:
+    description: >
+        tbd
+    type: boolean
+
+  policy:
+    description: >
+        tbd
+    type: boolean
+
+  protocols:
     $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"

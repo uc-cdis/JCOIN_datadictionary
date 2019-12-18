@@ -1,13 +1,15 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "alias"
-title: Alias
+id: "participant"
+title: Participant
 type: object
+namespace: http://gdc.nci.nih.gov
 category: administrative
 program: '*'
 project: '*'
 description: >
-  Additional identifier by which the participant is known.
+  The collection of all data related to a specific participant in the
+  context of a specific project.
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,27 +22,26 @@ systemProperties:
   - state
 
 links:
-  - name: cases
-    backref: aliases
-    label: identifies
-    target_type: case
+  - name: protocols
+    backref: participants
+    label: recruited_at
+    target_type: protocol
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - cases
-  - id_type
-  - value
+  - protocols
 
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
+# Protocol properties
 properties:
   type:
-    enum: [ "alias" ]
+    type: string
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
@@ -50,19 +51,11 @@ properties:
     type:
       - string
       - "null"
-  id_type:
-    enum:
-      - Consortium ID
-      - DCC-Assigned Family/Individual ID
-      - Local Participant ID
-      - Local Family/Individual ID
-  value:
-    description: >
-      Identifier referring to an individual participant. This may consist of
-      a single alphanumeric value, or a pair of values representing the
-      family/pedigree and individual, separated by a comma.
-    type: string
-  cases:
+  consent_codes:
+    type: array
+    items:
+      type: string
+  protocols:
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"

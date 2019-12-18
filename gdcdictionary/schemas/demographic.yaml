@@ -22,17 +22,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: cases
+  - name: participants
     backref: demographics
     label: describes
-    target_type: case
+    target_type: participant
     multiplicity: one_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - cases
+  - participants
   - gender
 
 preferred:
@@ -113,7 +113,7 @@ properties:
       - number
       - "null"
 
-  cases:
+  participants:
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"

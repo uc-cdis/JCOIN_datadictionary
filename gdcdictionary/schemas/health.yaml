@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "center"
-title: Center
+id: "health"
+title: Health
 type: object
 category: clinical
 program: '*'
@@ -22,7 +22,7 @@ systemProperties:
 
 links:
   - name: follow_ups
-    backref: centers
+    backref: healths
     label: performed_at
     target_type: follow_up
     multiplicity: many_to_many
@@ -39,16 +39,21 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
-
-  genhl:
+    
+  physical_health:
     description: >
-      Subject perception about his current health.
-    enum:
-      - Excellent
-      - Very Good
-      - Good
-      - Fair
-      - Poor
+      tbd
+    type: boolean 
+
+  mental_health:
+    description: >
+      tbd
+    type: boolean
+
+  substance_abuse:
+    description: >
+      tbd
+    type: boolean
 
   follow_ups:
     $ref: "_definitions.yaml#/to_one"

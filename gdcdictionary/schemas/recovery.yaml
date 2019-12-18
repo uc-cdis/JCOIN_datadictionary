@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "center"
-title: Center
+id: "recovery"
+title: Recovery
 type: object
 category: clinical
 program: '*'
@@ -22,7 +22,7 @@ systemProperties:
 
 links:
   - name: follow_ups
-    backref: centers
+    backref: recoveries
     label: performed_at
     target_type: follow_up
     multiplicity: many_to_many
@@ -40,15 +40,15 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  genhl:
+  recovery_support_service:
     description: >
-      Subject perception about his current health.
-    enum:
-      - Excellent
-      - Very Good
-      - Good
-      - Fair
-      - Poor
+      tbd
+    type: boolean 
 
+  relapse:
+    description: >
+      tbd
+    type: boolean 
+  
   follow_ups:
     $ref: "_definitions.yaml#/to_one"
