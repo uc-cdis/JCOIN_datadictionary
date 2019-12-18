@@ -109,11 +109,6 @@ properties:
       Visit number
     type: integer
     
-  harmonized_visit_number:
-    description: >
-      The derived harmonized visit number for the studies MACS and WIHS.
-    type: integer
-
   visit_id:
     description: >
       ID at time of interview (prior to transfer)
@@ -145,11 +140,6 @@ properties:
   visit_date:
     description: >
       Year of the visit.
-    type: integer
-
-  tint:
-    description: >
-      6-month time interval for visit
     type: integer
 
   days_to_follow_up:

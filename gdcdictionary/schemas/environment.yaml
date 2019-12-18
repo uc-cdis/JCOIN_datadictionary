@@ -8,7 +8,7 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-  The collection of all data related to a specific participant in the
+  The collection of all data related to a specific environment in the
   context of a specific project.
 additionalProperties: false
 submittable: true

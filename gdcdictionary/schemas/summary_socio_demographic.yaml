@@ -124,11 +124,6 @@ properties:
       - "Unknown"
       - "Missing"
 
-  ndrnkwk:
-    description: >
-      Number of drinks/week since last visit
-    type: number
-
   smoke_status:
     description: >
       Current cigarette smoking status
