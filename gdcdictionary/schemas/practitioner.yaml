@@ -8,7 +8,7 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  The collection of all data related to a specific participant in the
+  The collection of all data related to a specific practitioner in the
   context of a specific project.
 additionalProperties: false
 submittable: true
@@ -40,6 +40,7 @@ uniqueKeys:
 
 #Practitioner properties
 properties:
+
 $ref: "_definitions.yaml#/ubiquitous_properties"
 
 centers:
