@@ -41,20 +41,25 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
     
-  physical_health:
+  demographic:
     description: >
       tbd
     type: boolean 
 
-  mental_health:
+  knowledge:
     description: >
       tbd
-    type: boolean
-
-  substance_abuse:
+    type: boolean 
+  
+  sustainability:
     description: >
       tbd
-    type: boolean
+    type: boolean 
+  
+  accountability:
+    description: >
+      tbd
+    type: boolean 
 
   centers:
     $ref: "_definitions.yaml#/to_one"
