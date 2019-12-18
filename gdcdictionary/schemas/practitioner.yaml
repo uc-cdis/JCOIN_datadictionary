@@ -56,5 +56,5 @@ properties:
       tbd
     type: boolean
 
-centers:
-  $ref: "_definitions.yaml#/to_one"
+  centers:
+    $ref: "_definitions.yaml#/to_one"
