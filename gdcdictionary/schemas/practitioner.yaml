@@ -38,9 +38,6 @@ uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-#Practitioner properties
-properties:
-
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
     
