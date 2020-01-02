@@ -22,10 +22,10 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: protocols
+  - name: centers
     backref: systems
     label: recruited_at
-    target_type: protocol
+    target_type: center
     multiplicity: many_to_one
     required: true
 
