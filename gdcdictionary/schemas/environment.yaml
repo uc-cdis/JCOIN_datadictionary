@@ -22,17 +22,17 @@ systemProperties:
   - state
 
 links:
-  - name: protocols
+  - name: centers
     backref: Environments
     label: recruited_at
-    target_type: protocol
+    target_type: center
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - protocols
+  - centers
 
 uniqueKeys:
   - [id]
@@ -63,11 +63,6 @@ properties:
       tbd
     type: integer
 
-  protocols:
+  centers:
     $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"
+  
