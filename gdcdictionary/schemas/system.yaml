@@ -68,5 +68,5 @@ properties:
       tbd
     type: integer
 
-  protocols:
+  centers:
     $ref: "_definitions.yaml#/to_one"

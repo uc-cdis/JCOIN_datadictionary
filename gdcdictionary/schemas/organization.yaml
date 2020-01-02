@@ -62,5 +62,5 @@ properties:
         tbd
     type: boolean
 
-  protocols:
+  centers:
     $ref: "_definitions.yaml#/to_one"
