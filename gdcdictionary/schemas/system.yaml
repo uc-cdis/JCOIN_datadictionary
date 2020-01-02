@@ -32,7 +32,7 @@ links:
 required:
   - submitter_id
   - type
-  - protocols
+  - centers
 
 uniqueKeys:
   - [id]
