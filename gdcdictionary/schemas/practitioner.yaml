@@ -3,12 +3,12 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "practitioner"
 title: Practitioner
 type: object
+nodeTerms: null
 namespace: http://gdc.nci.nih.gov
 category: clinical
 program: '*'
 project: '*'
-description: >
-  The collection of all data related to a specific practitioner in the
+description: The collection of all data related to a specific practitioner in the
   context of a specific project.
 additionalProperties: false
 submittable: true
@@ -17,9 +17,9 @@ validators: null
 systemProperties:
   - id
   - project_id
+  - state
   - created_datetime
   - updated_datetime
-  - state
 
 links:
   - name: centers
@@ -39,27 +39,24 @@ uniqueKeys:
   - [project_id, submitter_id]
 
 properties:
+
   $ref: "_definitions.yaml#/ubiquitous_properties"
-    
+
+  accountability:
+    description: tbd
+    type: boolean
+
   demographic:
-    description: >
-      tbd
-    type: boolean 
+    description: tbd
+    type: boolean
 
   knowledge:
-    description: >
-      tbd
-    type: boolean 
-  
+    description: tbd
+    type: boolean
+
   sustainability:
-    description: >
-      tbd
-    type: boolean 
-  
-  accountability:
-    description: >
-      tbd
-    type: boolean 
+    description: tbd
+    type: boolean
 
   centers:
     $ref: "_definitions.yaml#/to_one"

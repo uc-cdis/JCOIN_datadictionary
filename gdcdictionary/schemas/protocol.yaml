@@ -3,11 +3,12 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "protocol"
 title: Protocol
 type: object
+nodeTerms: null
+namespace: .nan
 category: administrative
 program: '*'
 project: '*'
-description: >
-  Genetic Research Center (GRC) or other clinical center at which research
+description: Genetic Research Center (GRC) or other clinical center at which research
   participants are recruited.
 additionalProperties: false
 submittable: true
@@ -16,9 +17,9 @@ validators: null
 systemProperties:
   - id
   - project_id
+  - state
   - created_datetime
   - updated_datetime
-  - state
 
 links:
   - name: projects
@@ -34,38 +35,39 @@ required:
   - projects
 
 uniqueKeys:
-  - [ id ]
-  - [ project_id, submitter_id ]
+  - [id]
+  - [project_id, submitter_id]
 
 properties:
+
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  protocol:
-    description: >
-        blank
+  components:
+    description: blank
     enum:
-      -  "State Policy Rollouts"
-      -  "MOUD Comparative Effectiveness"
-      -  "Linkage"
+      - Drug Courts
+      - Jails
+      - Probation/Parole
 
-  components: 
-    description: >
-        blank
-    enum:
-      - "Drug Courts"
-      - "Jails"
-      - "Probation/Parole"
-
-  research_question:
-    type: string
-    description: >
-      blank
-  
-  projects:
-    $ref: "_definitions.yaml#/to_many_project"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
   created_datetime:
     $ref: "_definitions.yaml#/datetime"
+
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+
+  protocol:
+    description: blank
+    enum:
+      - Linkage
+      - MOUD Comparative Effectiveness
+      - State Policy Rollouts
+
+  research_question:
+    description: blank
+    type: string
+
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
+
+  projects:
+    $ref: "_definitions.yaml#/to_many_project"

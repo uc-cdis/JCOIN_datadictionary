@@ -3,13 +3,13 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "participant"
 title: Participant
 type: object
+nodeTerms: null
 namespace: http://gdc.nci.nih.gov
 category: administrative
 program: '*'
 project: '*'
-description: >
-  The collection of all data related to a specific participant in the
-  context of a specific project.
+description: The collection of all data related to a specific participant in the context
+  of a specific project.
 additionalProperties: false
 submittable: true
 validators: null
@@ -17,9 +17,9 @@ validators: null
 systemProperties:
   - id
   - project_id
+  - state
   - created_datetime
   - updated_datetime
-  - state
 
 links:
   - name: protocols
@@ -38,28 +38,33 @@ uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-# Protocol properties
 properties:
-  type:
-    type: string
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
-  state:
-    $ref: "_definitions.yaml#/state"
-  submitter_id:
-    type:
-      - string
-      - "null"
+
+  $ref: "nan"
+
   consent_codes:
     type: array
-    items:
-      type: string
-  protocols:
-    $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
+
   created_datetime:
     $ref: "_definitions.yaml#/datetime"
+
+  id:
+    $ref: "_definitions.yaml#/UUID"
+
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    type: "['string', 'null']"
+
+  type:
+    type: string
+
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
+
+  protocols:
+    $ref: "_definitions.yaml#/to_one"

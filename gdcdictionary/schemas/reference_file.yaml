@@ -3,11 +3,12 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "reference_file"
 title: Reference File
 type: object
+nodeTerms: null
 namespace: https://dcp.bionimbus.org/
 category: data_file
 program: '*'
 project: '*'
-description: "Data file containing any type of reference required for a data analysis."
+description: Data file containing any type of reference required for a data analysis.
 additionalProperties: false
 submittable: true
 validators: null
@@ -15,9 +16,9 @@ validators: null
 systemProperties:
   - id
   - project_id
+  - state
   - created_datetime
   - updated_datetime
-  - state
   - file_state
   - error_type
 
@@ -39,8 +40,8 @@ links:
         required: false
 
 required:
-  - type
   - submitter_id
+  - type
   - file_name
   - file_size
   - md5sum
@@ -49,57 +50,59 @@ required:
   - data_format
 
 uniqueKeys:
-  - [ id ]
-  - [ project_id, submitter_id ]
+  - [id]
+  - [project_id, submitter_id]
 
 properties:
-  $ref: "_definitions.yaml#/data_file_properties"
 
-  type: 
-    type: string
+  $ref: "_definitions.yaml#/data_file_properties"
 
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
+      - Clinical Data
+      - Familial Reference
+      - Other
       - Sequencing Reference
       - Variant Calling Reference
-      - Familial Reference
-      - Clinical Data
-      - Other
-
-  data_type:
-    term:
-      $ref: "_terms.yaml#/data_type"
-    enum:
-      - Sequencing Reference
-      - Variant Call
-      - Kinship Matrix
-      - Unharmonized Clinical Data
-      - Other
 
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
     enum:
-      - FASTA
-      - FAI
       - ALT
-      - BWT
-      - PAC
-      - ANN
       - AMB
+      - ANN
+      - AVRO
+      - BCF
+      - BWT
+      - FAI
+      - FASTA
+      - GDS
+      - PAC
+      - RDATA
       - SA
       - TAR
-      - VCF
-      - BCF
       - TBI
-      - GDS
       - TXT
-      - RDATA
-      - AVRO
+      - VCF
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - Kinship Matrix
+      - Other
+      - Sequencing Reference
+      - Unharmonized Clinical Data
+      - Variant Call
+
+  type:
+    type: string
 
   core_metadata_collections:
-    $ref: "_definitions.yaml#/to_many"
+    $ref: "_definitions.yaml#/to_one"
+
   projects:
-    $ref: "_definitions.yaml#/to_many_project"
+    $ref: "_definitions.yaml#/to_one_project"

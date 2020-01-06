@@ -3,13 +3,13 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "system"
 title: System
 type: object
+nodeTerms: null
 namespace: http://gdc.nci.nih.gov
 category: administrative
 program: '*'
 project: '*'
-description: >
-  The collection of all data related to a specific participant in the
-  context of a specific project.
+description: The collection of all data related to a specific participant in the context
+  of a specific project.
 additionalProperties: false
 submittable: true
 validators: null
@@ -38,34 +38,29 @@ uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-# Protocol properties
 properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  cost:
-    description: >
-      tbd
-    enum:
-      -  "Personnel Staff Time"
-      -  "Travel"
-      -  "Supplies"
-      -  "Meeting Space"
-      -  "Miscellaneous"
-
-  qaly:
-    description: >
-      tbd
+  abstinent_year:
+    description: tbd
     type: integer
 
-  abstinent_year:
-    description: >
-      tbd
-    type: integer 
+  cost:
+    description: tbd
+    enum:
+      - Meeting Space
+      - Miscellaneous
+      - Personnel Staff Time
+      - Supplies
+      - Travel
 
-  incremental_cost_effectiveness_ratio:  
-    description: >
-      tbd
+  incremental_cost_effectiveness_ratio:
+    description: tbd
+    type: integer
+
+  qaly:
+    description: tbd
     type: integer
 
   centers:
