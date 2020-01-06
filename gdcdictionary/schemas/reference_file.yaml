@@ -55,8 +55,8 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
-  type:
-    string
+  type: 
+    type: string
 
   data_category:
     term:
