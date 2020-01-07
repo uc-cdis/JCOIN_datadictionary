@@ -25,7 +25,7 @@ links:
     backref: recoveries
     label: performed_at
     target_type: follow_up
-    multiplicity: many_to_many
+    multiplicity: many_to_one
     required: true
 
 required:
