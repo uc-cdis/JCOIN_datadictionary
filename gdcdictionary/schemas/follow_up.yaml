@@ -211,7 +211,7 @@ properties:
       TBD
     type: string
 
-  Re-arrest within 6 months using Admin data:
+  Re-arrest_within_6_months_using_admin_data:
     description: >
       TBD
     type: boolean
