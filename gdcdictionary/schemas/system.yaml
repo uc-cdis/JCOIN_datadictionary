@@ -74,7 +74,7 @@ properties:
     type:
       - string 
   
-  healthcare_utilization_costs_using_GAIN-Q3:
+  healthcare_utilization_costs_using_GAIN_Q3:
     description: >
       tbd
     type: number
@@ -85,7 +85,7 @@ properties:
     type:
       - string
 
-  ASI//TimeLine_followBack:
+  ASI_TimeLine_followBack:
     description: >
       tbd
     type:
