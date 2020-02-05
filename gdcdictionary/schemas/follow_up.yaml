@@ -180,7 +180,7 @@ properties:
     type:
       - string
 
-  Baseline participant characteristics using GAIN-Q3:
+  Baseline_participant_characteristics_using_GAIN_Q3:
     description: >
       TBD
     type:
@@ -222,7 +222,7 @@ properties:
     type:
       - string
 
-  Re-arrest_within_6_months_using_admin_data:
+  Re_arrest_within_6_months_using_admin_data:
     description: >
       TBD
     type: boolean

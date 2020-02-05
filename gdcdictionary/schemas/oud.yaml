@@ -110,7 +110,7 @@ properties:
       tbd
     type: boolean
 
-  number_of_injections_due/completed_using_admin_data:
+  number_of_injections_due_completed_using_admin_data:
     description: >
       tbd
     type: integer
@@ -130,7 +130,7 @@ properties:
       tbd
     type: integer 
   
-  treatment_records_(admissions dates, treatment received, discharge dates, discharge status): 
+  treatment_records_admissions_dates_treatment_received_discharge_dates_discharge status: 
     description: >
       tbd
     type:
@@ -148,7 +148,7 @@ properties:
     type:
       - string
 
-  spent_>60_days_in_treatment_using_admin_data: 
+  spent_greater_than_60_days_in_treatment_using_admin_data: 
     description: >
       tbd
     type:
@@ -190,7 +190,7 @@ properties:
     type:
       - string 
   
-  receipt_of_MOUD_prescription_or_coverage_during_of_75%_of_90_days_post_release_based_on_admin_data:
+  receipt_of_MOUD_prescription_or_coverage_during_of_75_percent_of_90_days_post_release_based_on_admin_data:
     description: >
       tbd
     type:
