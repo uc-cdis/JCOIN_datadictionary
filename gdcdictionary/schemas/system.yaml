@@ -71,7 +71,8 @@ properties:
   DATCAP:
     description: >
       tbd
-    type: string 
+    type:
+      - string 
   
   healthcare_utilization_costs_using_GAIN-Q3:
     description: >
@@ -81,22 +82,26 @@ properties:
   EQ5D:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   ASI//TimeLine_followBack:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   admin_records: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   non_study_medical_and_other_services_form:
     description: >
       tbd
-    type: string
+    type:
+      - string
     
   centers:
     $ref: "_definitions.yaml#/to_one"

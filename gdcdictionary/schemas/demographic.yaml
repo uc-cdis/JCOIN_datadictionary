@@ -116,22 +116,26 @@ properties:
   electronic_health_record:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   date_and_cause_of_death_per_ICD-10_codes:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   vital_statistics_for_count_of_overdose_deaths:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   Death_records_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   participants:
     $ref: "_definitions.yaml#/to_one"

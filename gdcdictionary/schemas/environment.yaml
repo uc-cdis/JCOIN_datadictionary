@@ -66,27 +66,32 @@ properties:
   percent_of_county_residents_<18_below_FPL_using_census_data:
     description: >
       tbd
-    type: number
+    type:
+      - string
 
   percent_of_population_designated_as_urban_using_census_data:
     description: >
       tbd
-    type: number
+    type:
+      - string
 
   county_licensed_MAT_providers_using_admin_data:
     description: >
       tbd
-    type: string 
+    type:
+      - string 
   
   centers_of_treatment_innovation_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   recovery_advocates_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   county_overdose_rates_using_admin_data:
     description: >

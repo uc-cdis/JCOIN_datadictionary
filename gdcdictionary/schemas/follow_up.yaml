@@ -159,57 +159,68 @@ properties:
   education_level:
     description: >
       An indication of the years of schooling completed in graded public, private, or parochial schools, and in colleges, universities, or professional schools.
-    type: string
+    type:
+      - string
 
   housing_status:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   food_insecurity:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   locator_information:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   Baseline participant characteristics using GAIN-Q3:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   zip_code:
     description: >
       TBD
-    type: string 
+    type:
+      - string 
 
   admin_data_to_get_count_of_incarceration_episodes:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   admin_data_to_get_count_of_incarceration_days:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   admin_data_to_get_count_of_arrests:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   admission_and_release_dates_from_jail_using_admin_data:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   completed_terms_of_mandates_using_admin_data:
     description: >
       TBD
-    type: string
+    type:
+      - string
 
   Re-arrest_within_6_months_using_admin_data:
     description: >

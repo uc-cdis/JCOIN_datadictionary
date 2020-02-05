@@ -63,36 +63,42 @@ properties:
   treatment_group:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   self_reported_history_of_OUD_and_MOUD_treatment:
     treatment_group:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   MOUD_receipt_within_30_days_of_jail_release_based_on_administrative_data: 
     treatment_group:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   MOUD_receipt_in_jail_using_administrative_data: 
     treatment_group:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   Count_of_post_release_encounters_with_SUD_providers_and_other_behavioral_health_providers_using_admin_data: 
     treatment_group:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   type_of_medication_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   receipt_of_treatment:
     description: >
@@ -127,62 +133,74 @@ properties:
   treatment_records_(admissions dates, treatment received, discharge dates, discharge status): 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   timeline_FollowBack: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   active_MOUD_prescription_or_coverage_on_post_release_day_180_based_on_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   spent_>60_days_in_treatment_using_admin_data: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   retention_in_treatment_using_medication_log: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   self_reported_treatment_retention: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   phenX_measure_on_unmet_need_for_alcohol_or_drug_treatment:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   treatment_services_review:
     description: >
       tbd
-    type: string
+    type:
+      - string
   
   electronic_health_record:
     description: >
       tbd
-    type: string
+    type:
+      - string
   
   confirmation_with_treatment_facility:
     description: >
       tbd
-    type: string 
+    type:
+      - string 
   
   receipt_of_MOUD_prescription_or_coverage_during_of_75%_of_90_days_post_release_based_on_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   ED_and_hospital_encounters_for_drug_related_consequences_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   follow_ups:
     $ref: "_definitions.yaml#/to_one"

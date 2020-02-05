@@ -58,188 +58,222 @@ properties:
   self_reported_health_conditions:
     description: >
       tbd
-    type: array
-    items:
-      type: string
+    type:
+      - string
 
   promis_pain_instrument:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   acute_care_utilization_based_on_electronic_health_record:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   HIV_risk_behaviors_using_the_risk_assessment_battery:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   self_reported_health_status:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   medical_history_screening:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   HIV_serostatus:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   HCV_serostatus:
     description: >
       tbd
-    type: string
+    type:
+      - string
     
   pregnancy_using_urinalysis:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   self_reported_mental_health_conditions:
     description: >
       tbd
     type: array
     items:
-      type: string
+      type:
+      - string
 
   self_reported_validated_measures_of_health:
     description: >
       tbd
     type: array
     items:
-      type: string
+      type:
+      - string
 
   mental_health:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   life_achievement:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   social_support_and_spiritual_wellbeing:
     description: >
       tbd
-    type: string
+    type:
+      - string
   
   perceived_stress_scale:
     description: >
       tbd
-    type: string
+    type:
+      - string
   
   everyday_discrimination_scale:
     description: >
       tbd
-    type: string 
+    type:
+      - string 
   
   quality_of_life_using_EQ_5D:
     description: >
       tbd
-    type: string
+    type:
+      - string
   
   psychiatric_history_screening:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   quality_of_life_using_WHOQOL-BREF:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   hamilton_depression_scale:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   client_level_behavioral_outcomes_using_admin_data patient_satisfaction_questionnaire:
     description: >
       tbd
-    type: string
+   type:
+      - string
 
   ASI_and_ASI-lite:
     description: >
       tbd
-    type: string 
+    type:
+      - string
   
   Timeline_FollowBack: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   Urine_toxicologies: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   substance_use_using_admin_data: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   CIDI-Mini_for_OUD: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   symptom_counts_using_GAIN-Q3: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   brief_treatment_needs_assessment: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   Opioid_cravings_using_visual_analog_scale: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   self-reported_overdose: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   overdose_using_admin_data: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   MATRIS_for_time-to-overdose:  
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   Admin_data_for_time-to-overdose_count_of_ED_encounters_and_count_of_hospital_encounters:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   fatal_and_non-fatal_overdose_using_opioid_overdose: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   scale_and_admin_data: 
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   overdose_and_adverse_events_using_SAFTEE:
     description: >
       tbd
-    type: string
+    type:
+      - string
     
   follow_ups:
     $ref: "_definitions.yaml#/to_one"

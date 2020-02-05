@@ -53,17 +53,20 @@ properties:
   count_of_post_release_coun    ters_with_access_to_recovery_program_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   peer_navigation_services_using_admin_data:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   urine_toxicologies:
     description: >
       tbd
-    type: string
+    type:
+      - string
 
   follow_ups:
     $ref: "_definitions.yaml#/to_one"
