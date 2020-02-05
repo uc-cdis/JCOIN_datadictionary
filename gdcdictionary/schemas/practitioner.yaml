@@ -72,7 +72,7 @@ properties:
       tbd
     type: integer
 
-  race/ethnicity:
+  race_ethnicity:
     description: >
       tbd
     type:
@@ -102,25 +102,25 @@ properties:
     type:
       - string
 
-  knowledge/attitudes_toward_MOUD:
+  knowledge_attitudes_toward_MOUD:
     description: >
       tbd
     type:
       - string
 
-  knowledge/attitudes_toward_MOUD_and_criminal_activity:
+  knowledge_attitudes_toward_MOUD_and_criminal_activity:
     description: >
       tbd
     type:
       - string
 
-  knowledge/attitudes_toward_MOUD_and_overdose:
+  knowledge_attitudes_toward_MOUD_and_overdose:
     description: >
       tbd
     type:
       - string
 
-  knowledge/attitudes_toward_illicit_opioid_consumption:
+  knowledge_attitudes_toward_illicit_opioid_consumption:
     description: >
       tbd
     type:
@@ -214,7 +214,7 @@ properties:
     type:
       - string
 
-  occurrence/response_to_barriers/opportunities_to_improve_intervention_surveys_per_coaching_calls:
+  occurrence_response_to_barriers_opportunities_to_improve_intervention_surveys_per_coaching_calls:
     description: >
       tbd
     type:
@@ -227,5 +227,4 @@ properties:
       - string
     
   centers:
-
     $ref: "_definitions.yaml#/to_one"
