@@ -233,7 +233,7 @@ properties:
     type:
       - string
 
-  self-reported_overdose: 
+  self_reported_overdose: 
     description: >
       tbd
     type:
@@ -257,7 +257,7 @@ properties:
     type:
       - string
 
-  fatal_and_non-fatal_overdose_using_opioid_overdose: 
+  fatal_and_non_fatal_overdose_using_opioid_overdose: 
     description: >
       tbd
     type:
