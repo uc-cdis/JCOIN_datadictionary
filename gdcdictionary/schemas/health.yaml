@@ -179,7 +179,7 @@ properties:
     type:
       - string
 
-  client_level_behavioral_outcomes_using_admin_data patient_satisfaction_questionnaire:
+  client_level_behavioral_outcomes_using_admin_data_patient_satisfaction_questionnaire:
     description: >
       tbd
     type:
