@@ -63,7 +63,7 @@ properties:
       tbd
     type: integer
 
-  percent_of_county_residents_<18_below_FPL_using_census_data:
+  percent_of_county_residents_less_than_18_below_FPL_using_census_data:
     description: >
       tbd
     type:
