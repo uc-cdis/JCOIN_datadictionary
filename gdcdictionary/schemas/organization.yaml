@@ -108,7 +108,7 @@ properties:
         tbd
     type: number
 
-  proportion_of_post_release_MOUD_initiates_that_have_an_active_prescription_or_coverage_during_75%_of_90_days_post_release_using_admin_data: 
+  proportion_of_post_release_MOUD_initiates_that_have_an_active_prescription_or_coverage_during_75_percent_of_90_days_post_release_using_admin_data: 
     description: >
         tbd
     type: number
