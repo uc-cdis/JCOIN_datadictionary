@@ -165,7 +165,7 @@ properties:
     type:
       - string
   
-  innovation/flexibility_performance_feedback_and_quality_all_using_organizational_climate_measure: 
+  innovation_flexibility_performance_feedback_and_quality_all_using_organizational_climate_measure: 
     description: >
         tbd
     type:
