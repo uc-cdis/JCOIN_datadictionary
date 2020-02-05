@@ -78,6 +78,9 @@ properties:
     type: number
   
   implementation_efficiency_per_coaching_calls:
+    description: >
+        tbd
+    type: string
 
   proportion_of_MOUD_referred_that_start_MOUD_in_jail_using_admin_data:
     description: >
