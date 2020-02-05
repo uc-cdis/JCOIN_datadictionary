@@ -135,7 +135,7 @@ properties:
     type:
       - string 
   
-  organization support: 
+  organization_support: 
     description: >
         tbd
     type:
