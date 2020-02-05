@@ -89,7 +89,7 @@ properties:
     type: string
 
   county_overdose_rates_using_admin_data:
-   description: >
+    description: >
       tbd
     type: number
   
