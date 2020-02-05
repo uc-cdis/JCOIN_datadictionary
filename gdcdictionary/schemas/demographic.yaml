@@ -119,7 +119,7 @@ properties:
     type:
       - string
 
-  date_and_cause_of_death_per_ICD-10_codes:
+  date_and_cause_of_death_per_ICD_10_codes:
     description: >
       tbd
     type:
