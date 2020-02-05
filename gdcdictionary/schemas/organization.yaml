@@ -192,7 +192,7 @@ properties:
   change_commitment_and_change_efficacy_using_organizational_readiness_for_implementing_change: 
     description: >
         tbd
-   type:
+    type:
       - string
 
   knowledge_understanding_of_importance_of_innovation_supportive_of_staff_and_proactive_problem_solving_among_leadership_all_using_the_implementation_leadership_scale:
