@@ -209,7 +209,7 @@ properties:
     type:
       - string
 
-  CIDI-Mini_for_OUD: 
+  CIDI_Mini_for_OUD: 
     description: >
       tbd
     type:
