@@ -130,7 +130,7 @@ properties:
       tbd
     type: integer 
   
-  treatment_records_admissions_dates_treatment_received_discharge_dates_discharge status: 
+  treatment_records_admissions_dates_treatment_received_discharge_dates_discharge_status: 
     description: >
       tbd
     type:
