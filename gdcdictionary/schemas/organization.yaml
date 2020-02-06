@@ -62,5 +62,192 @@ properties:
         tbd
     type: boolean
 
+  proportion_of_commitments_screened_for_OUD_fusing_admin_data:
+    description: >
+        tbd
+    type: number
+  
+  proportion_of_screens_positive_for_OUD_using_admin_data:
+    description: >
+        tbd
+    type: number 
+  
+  proportion_of_screen_positives_who_receive_MOUD_assessment_using_admin_data:
+    description: >
+        tbd
+    type: number
+  
+  implementation_efficiency_per_coaching_calls:
+    description: >
+        tbd
+    type:
+      - string
+
+  proportion_of_MOUD_referred_that_start_MOUD_in_jail_using_admin_data:
+    description: >
+        tbd
+    type: number 
+  
+  proportion_of_OUD_in_jail_that_get_a_community_appointment_before_release_stratified_by_MOUD_receipt_in_jail_using_admin_data: 
+    description: >
+        tbd
+    type: number
+
+  percent_of_those_who_are_screened_positive_for_OUD_who_are_referred_using_admin_data:
+    description: >
+        tbd
+    type: number
+
+  percent_referred_using_admin_data:
+    description: >
+        tbd
+    type: number
+
+  proportion_of_MOUD_initiations_that_initiate_MOUD_treatment_post_release_using_admin_data:
+    description: >
+        tbd
+    type: number
+
+  proportion_of_post_release_MOUD_initiates_that_have_an_active_prescription_or_coverage_during_75_percent_of_90_days_post_release_using_admin_data: 
+    description: >
+        tbd
+    type: number
+
+  proportion_of_post_release_MOUD_initiates_with_an_active_MOUD_prescription_or_coverage_on_post_release_using_admin_data:
+    description: >
+        tbd
+    type: number
+
+  proportion_of_post_release_MOUD_initiates_with_an_active_MOUD_prescription_or_coverage_on_post_release_day_180_using_admin_data:
+    description: >
+        tbd
+    type: number
+
+  innovation_flexibility_performance_feedback:
+    description: >
+        tbd
+    type:
+      - string
+  
+  quality:
+    description: >
+        tbd
+    type:
+      - string 
+  
+  organization_support: 
+    description: >
+        tbd
+    type:
+      - string
+  
+  communication:
+    description: >
+        tbd
+    type:
+      - string
+  
+  stress: 
+    description: >
+        tbd
+    type:
+      - string
+  
+  job_satisfaction_adaptability:
+    description: >
+        tbd
+    type:
+      - string
+  
+  supervisor_innovation_all_using_court_and_treatment_staff_survey: 
+    description: >
+        tbd
+    type:
+      - string
+  
+  innovation_flexibility_performance_feedback_and_quality_all_using_organizational_climate_measure: 
+    description: >
+        tbd
+    type:
+      - string
+
+  organizational_support_using_organizational_support_measure: 
+    description: >
+        tbd
+    type:
+      - string
+
+  communication_stress_satisfaction_adaptability_and_leadership_using_survey_of_organizational_functioning: 
+    description: >
+        tbd
+    type:
+      - string
+
+  staff_perceptions_of_expectations_support_and_rewards_associated_with_implementation_of_new_practices_or_innovations_all_using_implementation_climate_scale: 
+    description: >
+        tbd
+    type:
+      - string
+
+  change_commitment_and_change_efficacy_using_organizational_readiness_for_implementing_change: 
+    description: >
+        tbd
+    type:
+      - string
+
+  knowledge_understanding_of_importance_of_innovation_supportive_of_staff_and_proactive_problem_solving_among_leadership_all_using_the_implementation_leadership_scale:
+    description: >
+        tbd
+    type:
+      - string
+
+  staff_size_workflow_size_funding_supervision_training_needs_all_using_readiness_characteristics_adapted_from_CC_drug_courts_operations_survey:
+    description: >
+        tbd
+    type:
+      - string
+
+  staff_size_and_diversity_caseload_client_census_client_composition_accreditation_etc_all_using_unspecified_staff_survey:
+    description: >
+        tbd
+    type:
+      - string
+
+  access_to_naloxone: 
+    description: >
+        tbd
+    type:
+      - string
+  
+  access_to_MOUD_in_halfway_houses: 
+    description: >
+        tbd
+    type:
+      - string
+  
+  challenges_to_collaboration: 
+    description: >
+        tbd
+    type:
+      - string
+
+  relationship_effectiveness: 
+    description: >
+        tbd
+    type:
+      - string
+
+  awareness_of_partner_agency: 
+    description: >
+        tbd
+    type:
+      - string
+
+  communication_quality_all_using_court_and_treatment_staff_survey:
+    description: >
+        tbd
+    type:
+      - string
+    
   centers:
     $ref: "_definitions.yaml#/to_one"

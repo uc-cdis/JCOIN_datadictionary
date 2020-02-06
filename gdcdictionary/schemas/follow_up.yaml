@@ -147,5 +147,85 @@ properties:
       Number of days between the date used for index and the date the patient was seen or contacted at follow-up.
     type: integer
 
+  marital_status:
+    description: >
+      A demographic parameter indicating a person's current conjugal status.
+    enum:
+      - "single"
+      - "married"
+      - "divorced"
+      - "widowed"
+
+  education_level:
+    description: >
+      An indication of the years of schooling completed in graded public, private, or parochial schools, and in colleges, universities, or professional schools.
+    type:
+      - string
+
+  housing_status:
+    description: >
+      TBD
+    type:
+      - string
+
+  food_insecurity:
+    description: >
+      TBD
+    type:
+      - string
+
+  locator_information:
+    description: >
+      TBD
+    type:
+      - string
+
+  Baseline_participant_characteristics_using_GAIN_Q3:
+    description: >
+      TBD
+    type:
+      - string
+
+  zip_code:
+    description: >
+      TBD
+    type:
+      - string 
+
+  admin_data_to_get_count_of_incarceration_episodes:
+    description: >
+      TBD
+    type:
+      - string
+
+  admin_data_to_get_count_of_incarceration_days:
+    description: >
+      TBD
+    type:
+      - string
+
+  admin_data_to_get_count_of_arrests:
+    description: >
+      TBD
+    type:
+      - string
+
+  admission_and_release_dates_from_jail_using_admin_data:
+    description: >
+      TBD
+    type:
+      - string
+
+  completed_terms_of_mandates_using_admin_data:
+    description: >
+      TBD
+    type:
+      - string
+
+  Re_arrest_within_6_months_using_admin_data:
+    description: >
+      TBD
+    type: boolean
+  
   participants:
     $ref: "_definitions.yaml#/to_one"

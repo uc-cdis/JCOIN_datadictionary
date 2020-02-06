@@ -60,5 +60,147 @@ properties:
       tbd
     type: boolean
 
+  treatment_group:
+    description: >
+      tbd
+    type:
+      - string
+
+  self_reported_history_of_OUD_and_MOUD_treatment:
+    treatment_group:
+    description: >
+      tbd
+    type:
+      - string
+
+  MOUD_receipt_within_30_days_of_jail_release_based_on_administrative_data: 
+    treatment_group:
+    description: >
+      tbd
+    type:
+      - string
+
+  MOUD_receipt_in_jail_using_administrative_data: 
+    treatment_group:
+    description: >
+      tbd
+    type:
+      - string
+
+  Count_of_post_release_encounters_with_SUD_providers_and_other_behavioral_health_providers_using_admin_data: 
+    treatment_group:
+    description: >
+      tbd
+    type:
+      - string
+
+  type_of_medication_using_admin_data:
+    description: >
+      tbd
+    type:
+      - string
+
+  receipt_of_treatment:
+    description: >
+      tbd
+    type: boolean 
+    
+  using_admin_data:
+    description: >
+      tbd
+    type: boolean
+
+  number_of_injections_due_completed_using_admin_data:
+    description: >
+      tbd
+    type: integer
+  
+  non_study_addiction_treatment: 
+    description: >
+      tbd
+    type: boolean
+
+  self_reported_treatment_receipt:
+    description: >
+      tbd
+    type: boolean 
+  
+  days_of_MAT_and_other_treatment_using_GAIN_Q3:
+    description: >
+      tbd
+    type: integer 
+  
+  treatment_records_admissions_dates_treatment_received_discharge_dates_discharge_status: 
+    description: >
+      tbd
+    type:
+      - string
+
+  timeline_FollowBack: 
+    description: >
+      tbd
+    type:
+      - string
+
+  active_MOUD_prescription_or_coverage_on_post_release_day_180_based_on_admin_data:
+    description: >
+      tbd
+    type:
+      - string
+
+  spent_greater_than_60_days_in_treatment_using_admin_data: 
+    description: >
+      tbd
+    type:
+      - string
+
+  retention_in_treatment_using_medication_log: 
+    description: >
+      tbd
+    type:
+      - string
+
+  self_reported_treatment_retention: 
+    description: >
+      tbd
+    type:
+      - string
+
+  phenX_measure_on_unmet_need_for_alcohol_or_drug_treatment:
+    description: >
+      tbd
+    type:
+      - string
+
+  treatment_services_review:
+    description: >
+      tbd
+    type:
+      - string
+  
+  electronic_health_record:
+    description: >
+      tbd
+    type:
+      - string
+  
+  confirmation_with_treatment_facility:
+    description: >
+      tbd
+    type:
+      - string 
+  
+  receipt_of_MOUD_prescription_or_coverage_during_of_75_percent_of_90_days_post_release_based_on_admin_data:
+    description: >
+      tbd
+    type:
+      - string
+
+  ED_and_hospital_encounters_for_drug_related_consequences_using_admin_data:
+    description: >
+      tbd
+    type:
+      - string
+
   follow_ups:
     $ref: "_definitions.yaml#/to_one"
