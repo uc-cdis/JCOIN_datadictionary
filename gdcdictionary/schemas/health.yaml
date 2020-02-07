@@ -114,16 +114,14 @@ properties:
       tbd
     type: array
     items:
-      type:
-      - string
+      type: string
 
   self_reported_validated_measures_of_health:
     description: >
       tbd
     type: array
     items:
-      type:
-      - string
+      type: string
 
   mental_health:
     description: >
