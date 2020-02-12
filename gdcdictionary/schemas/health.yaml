@@ -272,6 +272,18 @@ properties:
       tbd
     type:
       - string
+
+  adverse_event:
+    description: >
+      tbd
+    type:
+      - string
+
+  adverse_event_outcome:
+    description: >
+      tbd
+    type:
+      - string
     
   follow_ups:
     $ref: "_definitions.yaml#/to_one"

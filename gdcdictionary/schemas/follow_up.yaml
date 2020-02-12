@@ -226,6 +226,21 @@ properties:
     description: >
       TBD
     type: boolean
-  
+
+  completed_follow_up:
+    description: >
+      TBD
+    type: boolean
+
+  termination_reason:
+    type: string
+    description: >
+      blank
+
+  completed_treatment:
+    type: string
+    description: >
+      blank
+    
   participants:
     $ref: "_definitions.yaml#/to_one"
