@@ -60,6 +60,11 @@ properties:
     type: string
     description: >
       blank
+
+  expected_enrollment:
+    type: string
+    description: >
+      blank
   
   projects:
     $ref: "_definitions.yaml#/to_many_project"

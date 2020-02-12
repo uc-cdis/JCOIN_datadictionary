@@ -202,5 +202,16 @@ properties:
     type:
       - string
 
+  overdose:
+    description: >
+      tbd
+    type: boolean
+
+  treatment_group:
+    description: >
+      tbd
+    type:
+      - string
+      
   follow_ups:
     $ref: "_definitions.yaml#/to_one"
