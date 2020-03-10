@@ -83,22 +83,22 @@ properties:
     description: >
       Visited primary care provider for alcohol or other drug use.
     enum:
-        - No
-        - Yes 
+        - "No"
+        - "Yes" 
     
   U6b:
     description: >
       Visited primary care provider for mental health.
     enum:
-        - No
-        - Yes 
+        - "No"
+        - "Yes"
     
   U6c:
     description: >
       Visited primary care provider for physical health.
     enum:
-        - No
-        - Yes 
+        - "No"
+        - "Yes" 
     
   U6d:
     description: >
@@ -174,8 +174,8 @@ properties:
     description: >
       Have you received any substance use treatment in the past 90 days (since last assessment)?  (CAN FILL IN BASED ON ABOVE)
     enum:
-        - No
-        - Yes
+        - "No"
+        - "Yes"
 
   U14a:
     description: >
