@@ -1,0 +1,232 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "utilization_services_questionnaire"
+title: Utilization of Services Questionnaire
+type: object
+category: clinical
+program: '*'
+project: '*'
+description: >
+    Description.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: follow_ups
+    backref: utilization_services_questionnaires
+    label: performed_at
+    target_type: follow_up
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - follow_ups
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+    
+  U1:
+    description: >
+      During the past 90 days (since last assessment), how many times have you had to go to an emergency room without being admitted to the hospital?
+    type: integer 
+    
+  U2:
+    description: >
+      During the past 90 days (since last assessment), how many nights were you in a hospital detoxification program for your alcohol and other drug use? (across all episodes)
+    type: integer 
+    
+  U3:
+    description: >
+      During the past 90 days (since last assessment), how many nights were you in a hospital for any other reason than detoxification? 
+    type: integer 
+    
+  U4:
+    description: >
+      During the past 90 days (since last assessment), how many nights were you in a non-hospital or social detoxification program from alcohol or other drugs? (also called residential detox)   
+    type: integer 
+    
+  U5a:
+    description: >
+      During the past 90 days (since last assessment), how many nights were you in a residential treatment program for alcohol or drug use? 
+    type: integer 
+    
+  U5b:
+    description: >
+      During the past 90 days (since last assessment), how many nights were you in a residential treatment program for mental health?
+    type: integer 
+    
+  U5c:
+    description: >
+      During the past 90 days (since last assessment), how many nights were you in a residential, nursing home or other rehabilitation facility for your physical health?
+    type: integer 
+    
+  U6:
+    description: >
+      During the past 90 days (since last assessment), how many times have you visited a primary care provider (physician, nurse, nurse practitioner, or physician’s assistant)?
+    type: integer 
+    
+  U6a:
+    description: >
+      Visited primary care provider for alcohol or other drug use.
+    enum:
+        - No
+        - Yes 
+    
+  U6b:
+    description: >
+      Visited primary care provider for mental health.
+    enum:
+        - No
+        - Yes 
+    
+  U6c:
+    description: >
+      Visited primary care provider for physical health.
+    enum:
+        - No
+        - Yes 
+    
+  U6d:
+    description: >
+      Visited primary care provider for some other reason (SPECIFY). 
+    type: string 
+     
+  U7:
+    description: >
+      Other than times you already mentioned above, during the past 3 months (since last assessment), how many days did you participate in any other outpatient treatment program specializing in alcohol or substance use? (OTHER THAN U1-6)   
+    type: integer 
+         
+  U7a:
+    description: >
+      How many of these days did you physically visit the program?
+    type: integer 
+               
+  U7b:
+    description: >
+      How many of these days did you participate on-line (e.g., smart phone, computer or tablet)?
+    type: integer 
+               
+  U7c:
+    description: >
+      How many of these days did you see a doctor?
+    type: integer 
+               
+  U7d:
+    description: >
+      How many of these days did you only participate in individual or group therapy?
+    type: integer 
+               
+  U7e:
+    description: >
+      How many of these days were for medication management only?
+    type: integer 
+          
+  U8:
+    description: >
+      Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you see a psychiatrist (MD) or psychologist (Ph.D., PsyD.)
+    type: integer 
+
+  U8a:
+    description: >
+      How many of these times did you physically visit the program?
+    type: integer 
+      
+  U8b:
+    description: >
+      How many of these times did you participate on-line (phone, computer or tablet)?
+    type: integer 
+      
+  U9:
+    description: >
+      Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen any other kind of counselor or social worker? (OTHER THAN U1-8)
+    type: integer
+
+  U9a:
+    description: >
+      How many of these times did you physically visit the program?
+    type: integer 
+
+  U9b:
+    description: >
+      How many of these times did you participate on-line (phone, computer or tablet)?
+    type: integer 
+
+  U13:
+    description: >
+      In the past 90 days (since your last assessment), how much money have you spent on all healthcare (e.g., copayments or prescriptions)?
+    type: integer
+
+  U14:
+    description: >
+      Have you received any substance use treatment in the past 90 days (since last assessment)?  (CAN FILL IN BASED ON ABOVE)
+    enum:
+        - No
+        - Yes
+
+  U14a:
+    description: >
+      Considering the substance use treatment from your most recent substance abuse treatment provider in the past 90 days (since your last assessment), please indicate how much you agree with each of the following statements: The provider is organized and well-run. [1] Strongly agree, [2] Moderately agree, [3] Agree somewhat, [4] Agree a little, [5] Do not agree at all. 
+    enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+
+  U14b:
+    description: >
+      Considering the substance use treatment from your most recent substance abuse treatment provider in the past 90 days (since your last assessment), please indicate how much you agree with each of the following statements: You are satisfied with this provider . [1] Strongly agree, [2] Moderately agree, [3] Agree somewhat, [4] Agree a little, [5] Do not agree at all. 
+    enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+
+  U14c:
+    description: >
+      Considering the substance use treatment from your most recent substance abuse treatment provider in the past 90 days (since your last assessment), please indicate how much you agree with each of the following statements: The staff are efficient at doing their job. [1] Strongly agree, [2] Moderately agree, [3] Agree somewhat, [4] Agree a little, [5] Do not agree at all. 
+    enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+
+  U14d:
+    description: >
+      Considering the substance use treatment from your most recent substance abuse treatment provider in the past 90 days (since your last assessment), please indicate how much you agree with each of the following statements: You can get plenty of personal counseling at this provider. [1] Strongly agree, [2] Moderately agree, [3] Agree somewhat, [4] Agree a little, [5] Do not agree at all. 
+    enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+
+  U14e:
+    description: >
+      Considering the substance use treatment from your most recent substance abuse treatment provider in the past 90 days (since your last assessment), please indicate how much you agree with each of the following statements: You can get plenty of medication assistance for opioid use at this provider. [1] Strongly agree, [2] Moderately agree, [3] Agree somewhat, [4] Agree a little, [5] Do not agree at all. 
+    enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+
+    
+  follow_ups:
+    $ref: "_definitions.yaml#/to_one"
