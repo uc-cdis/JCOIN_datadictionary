@@ -1,6 +1,6 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "_questionnaire"
+id: "justice_involvement_questionnaire"
 title: Justice Involvement Questionnaire
 type: object
 category: clinical
