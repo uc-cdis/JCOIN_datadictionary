@@ -142,7 +142,7 @@ properties:
   J1a99:
     description: >
       During the past 90 days (since your last assessment), how many times have you done something else that would have gotten you into trouble with the police if they had known about it? (carrying a weapon, gang involvement, domestic violence, trespass, gambling,  distributing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy,  ) (PLEASE DESCRIBE
-    type: sting
+    type: string
 
   J2:
     description: >
