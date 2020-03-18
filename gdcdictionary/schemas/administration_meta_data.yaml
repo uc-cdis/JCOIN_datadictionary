@@ -43,7 +43,7 @@ properties:
     description: >
       How were the questions administered?
     type: array
-    enum: 
+    items: 
       - "Self-administered"
       - "Orally administered by staff"
       - "Orally administered by others"
@@ -89,7 +89,7 @@ properties:
     description: >
       What was the primary language in which it was conducted? 
     type: array
-    enum: 
+    items:
       - "English"
       - "Spanish"
       - "Other (PLEASE DESCRIBE)"
@@ -104,7 +104,7 @@ properties:
     description: >
       What problems prevented a quiet and private environment? 
     type: array
-    enum: 
+    items: 
       - "noise or other frequent distractions"
       - "frequent interruptions"
       - "other people within ear shot"
