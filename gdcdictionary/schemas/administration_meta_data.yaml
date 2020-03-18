@@ -43,11 +43,11 @@ properties:
     description: >
       How were the questions administered?
     type: array
-    items: 
-      - "Self-administered"
-      - "Orally administered by staff"
-      - "Orally administered by others"
-      - "Other (PLEASE DESCRIBE)"
+      items: 
+        - "Self-administered"
+        - "Orally administered by staff"
+        - "Orally administered by others"
+        - "Other (PLEASE DESCRIBE)"
 
   AM1_v:
     description: >
@@ -59,10 +59,10 @@ properties:
     description: >
       What was the mode of administration? 
     type: array
-    enum: 
-      - "Pen & paper"
-      - "On a computer or tablet"
-      - "Other (PLEASE DESCRIBE)"
+      items: 
+        - "Pen & paper"
+        - "On a computer or tablet"
+        - "Other (PLEASE DESCRIBE)"
 
   AM1_v:
     description: >
@@ -74,10 +74,10 @@ properties:
     description: >
       What was the primary language in which it was conducted? 
     type: array
-    enum: 
-      - "English"
-      - "Spanish"
-      - "Other (PLEASE DESCRIBE)"
+      enum: 
+        - "English"
+        - "Spanish"
+        - "Other (PLEASE DESCRIBE)"
 
   AM3_v:
     description: >
@@ -104,13 +104,13 @@ properties:
     description: >
       What problems prevented a quiet and private environment? 
     type: array
-    items: 
-      - "noise or other frequent distractions"
-      - "frequent interruptions"
-      - "other people within ear shot"
-      - "police, guards, probation/parole officers, social workers or other officials present"
-      - "possible speaker or telephone monitoring of interview"
-      - "Other (PLEASE DESCRIBE)"
+      items: 
+        - "noise or other frequent distractions"
+        - "frequent interruptions"
+        - "other people within ear shot"
+        - "police, guards, probation/parole officers, social workers or other officials present"
+        - "possible speaker or telephone monitoring of interview"
+        - "Other (PLEASE DESCRIBE)"
 
   AM8_v:
     description: >
