@@ -241,7 +241,7 @@ properties:
   D6_1:
      description: >
       HIGHEST GRADE COMPLETED
-    type:
+     type:
       - string
 
   D6_2:
