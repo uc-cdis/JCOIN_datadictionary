@@ -21,7 +21,7 @@ systemProperties:
 
 links:
   - name: follow_ups
-    backref: administration_meta_datas
+    backref: implementation_outcome_measuress
     label: performed_at
     target_type: follow_up
     multiplicity: many_to_one
