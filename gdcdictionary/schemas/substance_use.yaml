@@ -151,18 +151,19 @@ properties:
     description: >
       During the past 90 days [prior to entering jail or prison/since your last assessment], how many times did you Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
     type: array
-    enum: 
-      - "Paramedic / Ambulance"
-      - "Firefighter"
-      - "Police"
-      - "Emergency room doctor"
-      - "Spouse/significant other"
-      - "Running partner"
-      - "Parent"
-      - "Friend"
-      - "Stranger"
-      - "Self"
-      - "Other (please describe)"
+    items:
+      enum: 
+        - "Paramedic / Ambulance"
+        - "Firefighter"
+        - "Police"
+        - "Emergency room doctor"
+        - "Spouse/significant other"
+        - "Running partner"
+        - "Parent"
+        - "Friend"
+        - "Stranger"
+        - "Self"
+        - "Other (please describe)"
 
   S3d:
     description: >
