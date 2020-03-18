@@ -1,0 +1,216 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "staff_attitudes_toward_moud"
+title: Staff Attitudes Toward MOUD 
+type: object
+category: clinical
+program: '*'
+project: '*'
+description: >
+    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: follow_ups
+    backref: staff_attitudes_toward_mouds
+    label: performed_at
+    target_type: follow_up
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - follow_ups
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+    
+  SM1:
+    description: >
+      Based on your knowledge and personal experience, to what extent do you consider each of the following medications for opioid use disorder to be effective with justice-involved populations? Methadone      
+    enum: 
+      - "Not at all effective 1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "Very Effective 7"
+      - "Don’t Know -99"
+
+  SM2:
+    description: >
+      Based on your knowledge and personal experience, to what extent do you consider each of the following medications for opioid use disorder to be effective with justice-involved populations? Buprenorphine (Suboxone) - oral      
+    enum: 
+      - "Not at all effective 1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "Very Effective 7"
+      - "Don’t Know -99"
+
+  SM3:
+    description: >
+      Based on your knowledge and personal experience, to what extent do you consider each of the following medications for opioid use disorder to be effective with justice-involved populations? Buprenorphine (Sublocade) - monthly injection      
+    enum: 
+      - "Not at all effective 1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "Very Effective 7"
+      - "Don’t Know -99"
+
+  SM4:
+    description: >
+      Based on your knowledge and personal experience, to what extent do you consider each of the following medications for opioid use disorder to be effective with justice-involved populations? Naltrexone – oral      
+    enum: 
+      - "Not at all effective 1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "Very Effective 7"
+      - "Don’t Know -99"
+
+  SM5:
+    description: >
+      Based on your knowledge and personal experience, to what extent do you consider each of the following medications for opioid use disorder to be effective with justice-involved populations? Naltrexone (Vivitrol) - monthly injection      
+    enum: 
+      - "Not at all effective 1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "Very Effective 7"
+      - "Don’t Know -99"
+
+  SM6:
+    description: >
+      In your opinion, how acceptable is each of the following medications for the treatment of opioid use disorder with justice-involved populations? Methadone      
+    enum: 
+      - "1 Completely Unacceptable"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Very Acceptable"
+
+  SM7:
+    description: >
+      In your opinion, how acceptable is each of the following medications for the treatment of opioid use disorder with justice-involved populations? Buprenorphine (Suboxone) - oral     
+    enum: 
+      - "1 Completely Unacceptable"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Very Acceptable"
+
+  SM8:
+    description: >
+      In your opinion, how acceptable is each of the following medications for the treatment of opioid use disorder with justice-involved populations? Buprenorphine (Sublocade) - monthly injection     
+    enum: 
+      - "1 Completely Unacceptable"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Very Acceptable"
+
+  SM9:
+    description: >
+      In your opinion, how acceptable is each of the following medications for the treatment of opioid use disorder with justice-involved populations? Naltrexone – oral      
+    enum: 
+      - "1 Completely Unacceptable"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Very Acceptable"
+
+  SM10:
+    description: >
+      In your opinion, how acceptable is each of the following medications for the treatment of opioid use disorder with justice-involved populations? Naltrexone (Vivitrol) - monthly injection    
+    enum: 
+      - "1 Completely Unacceptable"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Very Acceptable"
+
+  SM11:
+    description: >
+      To what extent have you received specific training about the following medications for opioid use disorder?  Methadone    
+    enum: 
+      - "1 No Training"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Extensive Training"
+
+  SM13:
+    description: >
+      To what extent have you received specific training about the following medications for opioid use disorder?  Buprenorphine (Sublocade) - monthly injection   
+    enum: 
+      - "1 No Training"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Extensive Training"
+
+  SM14:
+    description: >
+      To what extent have you received specific training about the following medications for opioid use disorder?  Naltrexone – oral    
+    enum: 
+      - "1 No Training"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Extensive Training"
+
+  SM15:
+    description: >
+      To what extent have you received specific training about the following medications for opioid use disorder?  Naltrexone (Vivitrol) - monthly injection   
+    enum: 
+      - "1 No Training"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7 Extensive Training"
+    
+  follow_ups:
+    $ref: "_definitions.yaml#/to_one"
