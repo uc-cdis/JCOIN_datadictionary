@@ -168,6 +168,7 @@ properties:
     description: >
       During the past 90 days [prior to entering jail or prison/since your last assessment], how many times did you Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
     type: array 
+    items:
       - "Heroin"
       - "Fentanyl"
       - "Other opioids"
