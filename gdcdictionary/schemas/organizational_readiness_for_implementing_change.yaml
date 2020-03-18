@@ -1,0 +1,163 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "organizational_readiness_for_implementing_change"
+title: ORGANIZATIONAL READINESS FOR IMPLEMENTING CHANGE (ORIC) 
+type: object
+category: clinical
+program: '*'
+project: '*'
+description: >
+    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: follow_ups
+    backref: organizational_readiness_for_implementing_changes
+    label: performed_at
+    target_type: follow_up
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - follow_ups
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+    
+  OR1:
+    description: >
+      People who work here feel confident that the organization can get people invested in implementing [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR2:
+    description: >
+      People who work here are committed to implementing [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR3:
+    description: >
+      People who work here feel confident that they can keep track of progress in implementing [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR4:
+    description: >
+      People who work here will do whatever it takes to implement [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+    
+  OR5:
+    description: >
+      People who work here feel confident that the organization can support people as they adjust to [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR6:
+    description: >
+      People who work here want to implement [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR7:
+    description: >
+      People who work here feel confident that they can keep the momentum going in implementing [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR8:
+    description: >
+      People who work here feel confident that they can handle the challenges that might arise in implementing [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR9:
+    description: >
+      People who work here are determined to implement [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR10:
+    description: >
+      People who work here feel confident that they can coordinate tasks so that implementation goes smoothly.        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR11:
+    description: >
+      People who work here are motivated to implement [intervention].        
+   enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  OR12:
+    description: >
+      People who work here feel confident that they can manage the politics of implementing [intervention].        
+    enum: 
+      - "Disagree"
+      - "Somewhat Disagree"
+      - "Neither Agree nor Disagree"
+      - "Somewhat Agree"
+      - "Agree"
+
+  follow_ups:
+    $ref: "_definitions.yaml#/to_one"
