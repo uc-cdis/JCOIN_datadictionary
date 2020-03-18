@@ -216,7 +216,7 @@ properties:
         - "4 to 6 months ago"
         - "2 to 3 months ago"
         - "Past month"
-        - "Don't know
+        - "Don't know"
 
     R3e:
       description: >
@@ -228,8 +228,7 @@ properties:
         - "4 to 6 months ago"
         - "2 to 3 months ago"
         - "Past month"
-        - "Don't know
-
+        - "Don't know"
     
     follow_ups:
       $ref: "_definitions.yaml#/to_one"
