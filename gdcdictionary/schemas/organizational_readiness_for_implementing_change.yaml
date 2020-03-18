@@ -142,7 +142,7 @@ properties:
   OR11:
     description: >
       People who work here are motivated to implement [intervention].        
-   enum: 
+    enum: 
       - "Disagree"
       - "Somewhat Disagree"
       - "Neither Agree nor Disagree"
