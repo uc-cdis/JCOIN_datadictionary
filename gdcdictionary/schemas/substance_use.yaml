@@ -152,32 +152,34 @@ properties:
       During the past 90 days [prior to entering jail or prison/since your last assessment], how many times did you Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
     type: array
     items: string
-      - "Paramedic / Ambulance"
-      - "Firefighter"
-      - "Police"
-      - "Emergency room doctor"
-      - "Spouse/significant other"
-      - "Running partner"
-      - "Parent"
-      - "Friend"
-      - "Stranger"
-      - "Self"
-      - "Other (please describe)"
+        enum:
+            - "Paramedic / Ambulance"
+            - "Firefighter"
+            - "Police"
+            - "Emergency room doctor"
+            - "Spouse/significant other"
+            - "Running partner"
+            - "Parent"
+            - "Friend"
+            - "Stranger"
+            - "Self"
+            - "Other (please describe)"
 
   S3d:
     description: >
       During the past 90 days [prior to entering jail or prison/since your last assessment], how many times did you Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
     type: array 
     items: string
-      - "Heroin"
-      - "Fentanyl"
-      - "Other opioids"
-      - "Crack or other forms of cocaine"
-      - "Methamphetamines, amphetamines or other forms of speed"
-      - "Xanax, benzodiazepines, or other anti-anxiety drugs or tranquilizers"
-      - "Marijuana"
-      - "Alcohol"
-      - "Other (PLEASE DESCRIBE"
+        enum:
+            - "Heroin"
+            - "Fentanyl"
+            - "Other opioids"
+            - "Crack or other forms of cocaine"
+            - "Methamphetamines, amphetamines or other forms of speed"
+            - "Xanax, benzodiazepines, or other anti-anxiety drugs or tranquilizers"
+            - "Marijuana"
+            - "Alcohol"
+            - "Other (PLEASE DESCRIBE)"
 
   S3e:
     description: >
