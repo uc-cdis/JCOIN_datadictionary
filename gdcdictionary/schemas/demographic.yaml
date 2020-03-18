@@ -46,8 +46,6 @@ uniqueKeys:
   - [project_id, submitter_id]
 
 properties:
-  type:
-    type: string
 
   id:
     $ref: "_definitions.yaml#/UUID"
