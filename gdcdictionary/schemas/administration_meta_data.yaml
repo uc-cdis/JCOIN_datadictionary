@@ -1,0 +1,126 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "administration_meta_data"
+title: Administration Meta Data
+type: object
+category: clinical
+program: '*'
+project: '*'
+description: >
+    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: follow_ups
+    backref: administration_meta_datas
+    label: performed_at
+    target_type: follow_up
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - follow_ups
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+    
+  AM1:
+    description: >
+      How were the questions administered?
+    type: array
+    items: 
+        type: string
+
+  AM1_v:
+    description: >
+      How were the questions administered? Other (PLEASE DESCRIBE)     
+    type:
+      - string
+
+  AM2:
+    description: >
+      What was the mode of administration? 
+    type: array
+    items: 
+        type: string
+
+  AM1_v:
+    description: >
+      What was the mode of administration?  Other (PLEASE DESCRIBE)     
+    type:
+      - string
+
+  AM3:
+    description: >
+      What was the primary language in which it was conducted? 
+    type: array
+    items: 
+        type: string
+
+  AM3_v:
+    description: >
+      What was the primary language in which it was conducted? Other (PLEASE DESCRIBE)      
+    type:
+      - string
+    
+  AM3:
+    description: >
+      What was the primary language in which it was conducted? 
+    type: array
+    items: 
+        type: string
+
+  AM3_v:
+    description: >
+      What was the primary language in which it was conducted? Other (PLEASE DESCRIBE)      
+    type:
+      - string
+
+  AM8:
+    description: >
+      What problems prevented a quiet and private environment? 
+    type: array
+    items: 
+        type: string
+
+  AM8_v:
+    description: >
+      What problems prevented a quiet and private environment? Other (PLEASE DESCRIBE)      
+    type:
+      - string
+
+  AM10:
+    description: >
+      What was the interview duration (time on task) in minutes?  
+    type:
+      - integer
+
+  AM11:
+    description: >
+      Over how many different days was the interview conducted?       
+    type:
+      - integer
+
+  AM99:
+    description: >
+      Do you have any additional comments about the administration of the assessment that should be considered when interpreting this assessment?        
+    type:
+      - string
+    
+  follow_ups:
+    $ref: "_definitions.yaml#/to_one"

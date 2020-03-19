@@ -1,0 +1,163 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "implementation_outcome_measures"
+title: Implementatition Outcome Measures
+type: object
+category: clinical
+program: '*'
+project: '*'
+description: >
+    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: follow_ups
+    backref: implementation_outcome_measuress
+    label: performed_at
+    target_type: follow_up
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - follow_ups
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+    
+  IM1:
+    description: >
+      [Intervention] seems fitting.  
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM2:
+    description: >
+      [Intervention] seems suitable.  
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM3:
+    description: >
+      [Intervention] seems applicable.  
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM4:
+    description: >
+      [Intervention] seems like a good match. 
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM5:
+    description: >
+      [Intervention] seems implementable.
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM6:
+    description: >
+      [Intervention] seems possible.
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM7:
+    description: >
+      [Intervention] seems doable.
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM8:
+    description: >
+      [Intervention] seems easy to use.
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM9:
+    description: >
+      [Intervention] meets my approval.
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+    
+  IM10:
+    description: >
+      [Intervention] is appealing to me.
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM11:
+    description: >
+      I like [Intervention].
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+
+  IM12:
+    description: >
+      I welcome [Intervention].
+    enum: 
+      - "1 Completely disagree"
+      - "2 Disagree"
+      - "3 Neither agree nor disagree"
+      - "4 Agree"
+      - "5 Completely agree"
+    
+  follow_ups:
+    $ref: "_definitions.yaml#/to_one"
