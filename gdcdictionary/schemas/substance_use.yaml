@@ -151,33 +151,15 @@ properties:
     description: >
       During the past 90 days [prior to entering jail or prison/since your last assessment], how many times did you Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
     type: array
-    items:
-      - "Paramedic / Ambulance"
-      - "Firefighter"
-      - "Police"
-      - "Emergency room doctor"
-      - "Spouse/significant other"
-      - "Running partner"
-      - "Parent"
-      - "Friend"
-      - "Stranger"
-      - "Self"
-      - "Other (please describe)"
+    items: 
+        type: string
 
   S3d:
     description: >
       During the past 90 days [prior to entering jail or prison/since your last assessment], how many times did you Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
-    type: array 
-    items:
-      - "Heroin"
-      - "Fentanyl"
-      - "Other opioids"
-      - "Crack or other forms of cocaine"
-      - "Methamphetamines, amphetamines or other forms of speed"
-      - "Xanax, benzodiazepines, or other anti-anxiety drugs or tranquilizers"
-      - "Marijuana"
-      - "Alcohol"
-      - "Other (PLEASE DESCRIBE"
+    type: array
+    items: 
+        type: string
 
   S3e:
     description: >
