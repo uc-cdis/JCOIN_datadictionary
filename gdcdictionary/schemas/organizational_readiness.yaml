@@ -1,6 +1,6 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "organizational_readiness_for_implementing_change"
+id: "organizational_readiness"
 title: ORGANIZATIONAL READINESS FOR IMPLEMENTING CHANGE (ORIC) 
 type: object
 category: clinical
@@ -21,7 +21,7 @@ systemProperties:
 
 links:
   - name: follow_ups
-    backref: organizational_readiness_for_implementing_changes
+    backref: organizational_readinesss
     label: performed_at
     target_type: follow_up
     multiplicity: many_to_one
