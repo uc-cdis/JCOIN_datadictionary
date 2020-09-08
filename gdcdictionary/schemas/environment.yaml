@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "environment"
 title: Environment
 type: object
-namespace: http://gdc.nci.nih.gov
+namespace: https://jcoin.datacommons.io/dd
 category: administrative
 program: '*'
 project: '*'
