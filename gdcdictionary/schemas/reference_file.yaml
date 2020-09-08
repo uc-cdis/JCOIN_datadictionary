@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "reference_file"
 title: Reference File
 type: object
-namespace: https://dcp.bionimbus.org/
+namespace: https://jcoin.datacommons.io/dd
 category: data_file
 program: '*'
 project: '*'
