@@ -77,7 +77,7 @@ properties:
       - Variant Call
       - Kinship Matrix
       - Unharmonized Clinical Data
-      - Survey 
+      - Survey Name 
       - Other
 
   data_format:
