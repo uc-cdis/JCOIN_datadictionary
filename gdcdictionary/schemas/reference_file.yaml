@@ -77,7 +77,7 @@ properties:
       - Variant Call
       - Kinship Matrix
       - Unharmonized Clinical Data
-      - Survey Name 
+      - Questionnaire data
       - Other
 
   data_format:
@@ -88,10 +88,12 @@ properties:
       - FAI
       - ALT
       - BWT
+      - DTA
       - PAC
       - ANN
       - AMB
       - SA
+      - SAS
       - TAR
       - VCF
       - BCF
