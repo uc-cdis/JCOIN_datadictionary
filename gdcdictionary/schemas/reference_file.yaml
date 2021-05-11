@@ -59,49 +59,19 @@ properties:
     type: string
 
   data_category:
-    term:
-      $ref: "_terms.yaml#/data_category"
-    enum:
-      - Sequencing Reference
-      - Variant Calling Reference
-      - Familial Reference
-      - Clinical Data
-      - Survey
-      - Other
+    description: >
+      Broad categorization of the contents of the data file.
+    type: string
 
   data_type:
-    term:
-      $ref: "_terms.yaml#/data_type"
-    enum:
-      - Sequencing Reference
-      - Variant Call
-      - Kinship Matrix
-      - Unharmonized Clinical Data
-      - Questionnaire data
-      - Other
+    description: >
+      Specific content type of the data file.
+    type: string
 
   data_format:
-    term:
-      $ref: "_terms.yaml#/data_format"
-    enum:
-      - FASTA
-      - FAI
-      - ALT
-      - BWT
-      - DTA
-      - PAC
-      - ANN
-      - AMB
-      - SA
-      - SAS
-      - TAR
-      - VCF
-      - BCF
-      - TBI
-      - GDS
-      - TXT
-      - RDATA
-      - AVRO
+    description: >
+      Format of the data files.
+    type: string
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_many"
