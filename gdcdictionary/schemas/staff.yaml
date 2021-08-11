@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "participant"
-title: Participant
+id: "staff"
+title: Staff
 type: object
 namespace: https://jcoin.datacommons.io/dd
 category: administrative
 program: '*'
 project: '*'
 description: >
-  The collection of all data related to a specific participant in the
+  The collection of all data related to a specific staff member in the
   context of a specific project.
 additionalProperties: false
 submittable: true
@@ -33,6 +33,8 @@ required:
   - submitter_id
   - type
   - protocols
+  - quarter_recruited
+  - year_recruited
 
 uniqueKeys:
   - [id]
@@ -63,3 +65,13 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
+  quarter_recruited:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The quarter of the year in which recruited.
+  year_recruited:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The year hired to work (e.g., 2018,2019,2020,2021)
+
+  

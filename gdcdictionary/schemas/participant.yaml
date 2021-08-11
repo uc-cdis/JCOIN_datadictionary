@@ -33,6 +33,8 @@ required:
   - submitter_id
   - type
   - protocols
+  - quarter_recruited
+  - year_recruited
 
 uniqueKeys:
   - [id]
@@ -63,3 +65,11 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
+  quarter_recruited:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The quarter of the year in which recruited for first study.
+  year_recruited:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The year recruited for first study (e.g., 2018,2019,2020,2021)
