@@ -22,24 +22,29 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: participants
-    backref: demographics
-    label: describes
-    target_type: participant
-    multiplicity: one_to_one
+  - exclusive: true #either needs to be staff or participant -- is this specifying this exclusive link?
     required: true
+    subgroup:
+    - name: participants
+      backref: demographic
+      label: describes
+      target_type: participant
+      multiplicity: one_to_one
+      required: false
+    - name: staffs
+      backref: demographic
+      label: describes
+      target_type: staff
+      multiplicity: one_to_one
+      required: false
 
 required:
   - submitter_id
   - type
-  - participants
+  #- participants #how does this work given we have 2 links to parent nodes?
   - gender
-
-preferred:
-  - race
+  - ethnicity
   - hispanic
-  - jewish
-
 uniqueKeys:
   #unclear if want submitter ID for clinical
   - [id]
@@ -61,11 +66,27 @@ properties:
       - string
       - "null"
 
-  gender:
+  gender: #using D4b iniitially. TODO: correct distinctions?
+    description: >
+      What is your gender identity? 
     enum:
-      - Male
-      - Female
-      - Unknown
+      - "Male"
+      - "Female"
+      - "Transgender"
+      - "Gender nonconforming"
+      - "Not reported"
+
+  ethnicity: #added given difference between race/ethnicity
+    description: >
+      How would you describe your ethnicity?
+    enum:
+      - White
+      - Black or African American
+      - American Indian or Alaska Native (SPECIFY principal tribe or community)
+      - Native Hawaiian or Other Pacific Islander
+      - Asian
+      - Some other race (SPECIFY)
+      - Not reported
 
   race:
     description: >
@@ -77,6 +98,7 @@ properties:
       - Native Hawaiian or Other Pacific Islander
       - Asian
       - Some other race (SPECIFY)
+      - Not reported
 
   other_race:
     description: >
@@ -96,6 +118,7 @@ properties:
     enum:
       - "Yes"
       - "No"
+      - "Not reported"
 
   jewish:
     description: >
@@ -157,9 +180,10 @@ properties:
       - "Male"
       - "Female"
       - "Transgender man/trans man/female-to-male (FTM)"
-      - "Transgender woman/ trans woman/male-to-female (MTF)"
-      - "Genderqueer/Gender nonconforming/neither exclusively male nor female"
+      - "Transgender woman/trans woman/male-to-female (MTF)"
+      - "Genderqueer/gender nonconforming/neither exclusively male nor female"
       - "Additional gender category (or other)"
+      - "Not reported"
 
   O2_2_gender_identity_specify:
     description: >
@@ -182,6 +206,7 @@ properties:
       - "Female"
       - "Transgender"
       - "Gender nonconforming"
+      - "Not reported"
 
   D4c:
     description: >
@@ -251,6 +276,8 @@ properties:
       - string
 
   participants:
+    $ref: "_definitions.yaml#/to_one"
+  staffs:
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"
