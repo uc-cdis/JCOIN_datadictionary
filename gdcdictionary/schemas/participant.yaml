@@ -33,6 +33,7 @@ required:
   - submitter_id
   - type
   - protocols
+  - role_in_project
   - quarter_recruited
   - year_recruited
 
@@ -73,3 +74,11 @@ properties:
     type: string #change to number when we figure out how missing/null vals are coded
     description: >
       The year recruited for first study (e.g., 2018,2019,2020,2021)
+  role_in_project:
+    type: string
+    enum:
+    description: >
+      Are they a participant or staff?
+  enum:
+    - 'S'
+    - 'P'
