@@ -8,7 +8,7 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-  The collection of all data related to a specific participant in the
+  The collection of all data related to a specific participant or other individuals with data (eg., staff) in the
   context of a specific project.
 additionalProperties: false
 submittable: true
@@ -35,7 +35,6 @@ required:
   - protocols
   - role_in_project
   - quarter_recruited
-  - year_recruited
 
 uniqueKeys:
   - [id]
@@ -69,16 +68,11 @@ properties:
   quarter_recruited:
     type: string #change to number when we figure out how missing/null vals are coded
     description: >
-      The quarter of the year in which recruited for first study.
-  year_recruited:
-    type: string #change to number when we figure out how missing/null vals are coded
-    description: >
-      The year recruited for first study (e.g., 2018,2019,2020,2021)
+      The quarter and year in which recruited for first study in the format of XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
   role_in_project:
     type: string
-    enum:
     description: >
       Are they a participant or staff?
-  enum:
-    - 'S'
-    - 'P'
+    enum:
+      - 'Staff'
+      - 'Participant'
