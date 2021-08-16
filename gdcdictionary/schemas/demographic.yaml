@@ -34,7 +34,7 @@ required:
   - type
   - participants 
   - gender
-  - ethnicity
+  - race
   - hispanic
 uniqueKeys:
   #unclear if want submitter ID for clinical
@@ -66,18 +66,6 @@ properties:
       - "Transgender"
       - "Gender nonconforming"
       - "Not reported"
-
-  ethnicity: #added given difference between race/ethnicity
-    description: >
-      How would you describe your ethnicity?
-    enum:
-      - White
-      - Black or African American
-      - American Indian or Alaska Native (SPECIFY principal tribe or community)
-      - Native Hawaiian or Other Pacific Islander
-      - Asian
-      - Some other race (SPECIFY)
-      - Not reported
 
   race:
     description: >
