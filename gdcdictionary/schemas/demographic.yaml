@@ -23,11 +23,11 @@ systemProperties:
 
 links:
   - name: participants
-    backref: demographic
+    backref: demographics
     label: describes
     target_type: participant
     multiplicity: one_to_one
-    required: false
+    required: true
 
 required:
   - submitter_id
