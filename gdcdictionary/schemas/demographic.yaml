@@ -268,8 +268,6 @@ properties:
 
   participants:
     $ref: "_definitions.yaml#/to_one"
-  staffs:
-    $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"
   created_datetime:
