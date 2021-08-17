@@ -8,7 +8,7 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-  The collection of all data related to a specific participant in the
+  The collection of all data related to a specific participant or other individuals with data (eg., staff) in the
   context of a specific project.
 additionalProperties: false
 submittable: true
@@ -33,6 +33,8 @@ required:
   - submitter_id
   - type
   - protocols
+  - role_in_project
+  - quarter_recruited
 
 uniqueKeys:
   - [id]
@@ -63,3 +65,13 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
+  quarter_recruited:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The quarter and year in which recruited for first study in the format of XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
+  role_in_project:
+    description: >
+      Are they a participant or staff?
+    enum:
+      - 'Staff'
+      - 'Participant'
