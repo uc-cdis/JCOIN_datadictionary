@@ -65,6 +65,7 @@ properties:
       - "Female"
       - "Transgender"
       - "Gender nonconforming"
+      - "Something else"
       - "Not reported"
 
   race:

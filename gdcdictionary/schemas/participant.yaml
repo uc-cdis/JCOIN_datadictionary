@@ -71,7 +71,7 @@ properties:
       The quarter and year in which recruited for first study in the format of XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
   role_in_project:
     description: >
-      Are they a participant or staff?
+      Are they a client or research staff?
     enum:
+      - 'Client'
       - 'Staff'
-      - 'Participant'
