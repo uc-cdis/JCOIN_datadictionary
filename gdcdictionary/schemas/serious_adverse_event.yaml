@@ -8,7 +8,10 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-  A submitted SAE form
+  The most up to date information pertaining to a single SAE. 
+  For example, if an SAE is submitted and the a follow up form is submitted with more up to date
+  information, this node will capture the most up to date information. However,
+  all files (ie initial and follow ups will be stored in a child node called serious_adverse_event_files)
 additionalProperties: false
 submittable: true
 validators: null
