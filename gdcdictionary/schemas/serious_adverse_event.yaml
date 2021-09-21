@@ -1,0 +1,175 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "serious_adverse_event"
+title: Serious Adverse Event
+type: object
+namespace: https://jcoin.datacommons.io/dd
+category: administrative
+program: '*'
+project: '*'
+description: >
+  A submitted SAE form
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+
+links:
+  - name: protocols
+    backref: saes
+    label: recorded_at
+    target_type: protocol
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - protocols
+  - quarter_of_sae
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    type: string
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  state:
+    $ref: "_definitions.yaml#/state"
+  submitter_id:
+    type:
+      - string
+      - "null"
+  protocols:
+    $ref: "_definitions.yaml#/to_one"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  is_final_report:
+    description:
+      If this is the finalized report? (option on follow up form)
+    enum:
+      - Yes
+      - No
+      - Not reported
+  quarter_of_sae:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The quarter and year in which serious adverse event was recorded XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
+    type: string
+  #propreties with suffix of "_occurred" are a part of
+  # "Check which of the following occurred"
+  death_occurred:
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  life_threatening_occurred:
+    enum:
+      - Yes
+      - No
+      - Not reported
+  hospitalization_occurred:
+    enum:
+      - Yes
+      - No
+      - Not reported
+  disability_occurred:
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  birth_defect_occurred:
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  required_treatment_occurred:
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  is_related_to_study:
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  was_expected:
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  opioid_medication:
+    description: >
+      Evidence for reported opoioid use basesd on free response answers
+    enum:
+      - Yes
+      - No
+      - Not reported
+
+  related_to_study:
+    description: >
+      Is this serious adverse event related to the study?
+      Note,  possible means:
+      There is a reasonable possibility that 
+      the incident, experience, or outcome may have been 
+      caused by the procedures involved in the research.   
+    enum: 
+      - Yes
+      - No
+      - Not reported
+  is_expected:
+    description: >
+      Was outcome expected 
+      where unexpected means:
+        Unexpected in nature, severity, or frequency given 
+        (a) the research procedures that are described 
+        in the protocol-related documents and informed consent document and 
+        (b) the characteristics of the population being studied.
+    enum: 
+      - Yes
+      - No
+      - Not reported
+
+#identical fields in demographic.yaml
+  race:
+    description: >
+      What is your race? SELECT ALL THAT APPLY
+    enum:
+      - White
+      - Black or African American
+      - American Indian or Alaska Native (SPECIFY principal tribe or community)
+      - Native Hawaiian or Other Pacific Islander
+      - Asian
+      - Some other race (SPECIFY)
+      - Not reported
+      
+
+  hispanic:
+    description: >
+      Are you of Hispanic, Latino, or Spanish origin?
+    enum:
+      - "Yes"
+      - "No"
+      - "Not reported"
+
+    
