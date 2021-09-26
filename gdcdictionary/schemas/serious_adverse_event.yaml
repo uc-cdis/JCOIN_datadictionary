@@ -65,8 +65,8 @@ properties:
     description:
       If this is the finalized report? (option on follow up form)
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
   quarter_of_sae:
     type: string #change to number when we figure out how missing/null vals are coded
@@ -77,56 +77,56 @@ properties:
   # "Check which of the following occurred"
   death_occurred:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   life_threatening_occurred:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
   hospitalization_occurred:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
   disability_occurred:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   birth_defect_occurred:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   required_treatment_occurred:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   is_related_to_study:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   was_expected:
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   opioid_medication:
     description: >
       Evidence for reported opoioid use basesd on free response answers
     enum:
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
   related_to_study:
@@ -137,8 +137,8 @@ properties:
       the incident, experience, or outcome may have been 
       caused by the procedures involved in the research.   
     enum: 
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
   is_expected:
     description: >
@@ -149,8 +149,8 @@ properties:
         in the protocol-related documents and informed consent document and 
         (b) the characteristics of the population being studied.
     enum: 
-      - Yes
-      - No
+      - 'Yes'
+      - 'No'
       - Not reported
 
 #identical fields in demographic.yaml
