@@ -22,10 +22,10 @@ systemProperties:
   - error_type
 
 links:
-  - name: saes
+  - name: protocols
     backref: sae_files
-    label: linked_to
-    target_type: sae
+    label: recorded_at
+    target_type: protocol
     multiplicity: many_to_one
     required: true
 
