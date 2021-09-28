@@ -48,7 +48,7 @@ systemProperties:
 #       multiplicity: one_to_many
 links:
   - name: protocols
-    backref: sae_files
+    backref: saes
     label: recorded_at
     target_type: protocol
     multiplicity: many_to_one
