@@ -25,26 +25,34 @@ systemProperties:
   - updated_datetime
   - state
 
+#only need up to date info (so one link to protocol) del the files/workflows
+# links:
+#   - exclusive: false
+#     required: true
+#     subgroup:
+#     - name: protocols
+#       backref: saes
+#       label: recorded_at
+#       target_type: protocol
+#       multiplicity: many_to_one
+#       required: true
+#     - name: sae_workflows
+#       backref: saes
+#       label: data_from
+#       target_type: sae_workflow
+#       multiplicity: many_to_one
+#     - name: sae_files
+#       backref: saes
+#       label: data_from
+#       target_type: sae_file
+#       multiplicity: one_to_many
 links:
-  - exclusive: false
+  - name: protocols
+    backref: sae_files
+    label: recorded_at
+    target_type: protocol
+    multiplicity: many_to_one
     required: true
-    subgroup:
-    - name: protocols
-      backref: saes
-      label: recorded_at
-      target_type: protocol
-      multiplicity: many_to_one
-      required: true
-    - name: sae_workflows
-      backref: saes
-      label: data_from
-      target_type: sae_workflow
-      multiplicity: many_to_one
-    - name: sae_files
-      backref: saes
-      label: data_from
-      target_type: sae_file
-      multiplicity: one_to_may
 
 required:
   - submitter_id
@@ -64,6 +72,7 @@ properties:
     systemAlias: node_id
   state:
     $ref: "_definitions.yaml#/state"
+  #REDCAP ids
   submitter_id:
     type:
       - string
@@ -76,13 +85,13 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
-  is_final_report:
-    description:
-      If this is the finalized report? (option on follow up form)
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
+  # is_final_report:
+  #   description:
+  #     If this is the finalized report? (option on follow up form)
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
   quarter_of_sae:
     type: string #change to number when we figure out how missing/null vals are coded
     description: >
@@ -90,41 +99,47 @@ properties:
     type: string
   #propreties with suffix of "_occurred" are a part of
   # "Check which of the following occurred"
-  death_occurred:
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
+  # death_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
 
-  life_threatening_occurred:
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
-  hospitalization_occurred:
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
-  disability_occurred:
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
+  # life_threatening_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+  # hospitalization_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+  # disability_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
 
-  birth_defect_occurred:
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
+  # birth_defect_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
 
-  required_treatment_occurred:
-    enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
+  # required_treatment_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
 
   is_related_to_study:
+    description: >
+      Is this serious adverse event related to the study?
+      Note,  possible means:
+      There is a reasonable possibility that 
+      the incident, experience, or outcome may have been 
+      caused by the procedures involved in the research. 
     enum:
       - 'Yes'
       - 'No'
@@ -135,40 +150,24 @@ properties:
       - 'Yes'
       - 'No'
       - Not reported
-
-  opioid_medication:
+  #get hubs who are taking MOUD intervention
+  on_opioid_medication:
     description: >
-      Evidence for reported opoioid use basesd on free response answers
+      Was client taking a medication for opioid use disorder (MOUD)?
+      This is derived from hubs who are are using MOUD intervention.
     enum:
       - 'Yes'
       - 'No'
       - Not reported
 
-  related_to_study:
-    description: >
-      Is this serious adverse event related to the study?
-      Note,  possible means:
-      There is a reasonable possibility that 
-      the incident, experience, or outcome may have been 
-      caused by the procedures involved in the research.   
-    enum: 
-      - 'Yes'
-      - 'No'
-      - Not reported
-  is_expected:
-    description: >
-      Was outcome expected 
-      where unexpected means:
-        Unexpected in nature, severity, or frequency given 
-        (a) the research procedures that are described 
-        in the protocol-related documents and informed consent document and 
-        (b) the characteristics of the population being studied.
-    enum: 
-      - 'Yes'
-      - 'No'
-      - Not reported
-
-#identical fields in demographic.yaml
+#identical fields in demographic.yaml. *Gender is slightly different than any of the fields
+  gender:
+    descriptions: >
+      gender identity of client with SAE
+    enum:
+      - Female
+      - Male
+      - Non-binary
   race:
     description: >
       What is your race? SELECT ALL THAT APPLY
