@@ -276,3 +276,25 @@ ubiquitous_properties:
     $ref: "#/datetime"
   updated_datetime:
     $ref: "#/datetime"
+
+
+race:
+  description: >
+    What is your race? SELECT ALL THAT APPLY
+  enum:
+    - White
+    - Black or African American
+    - American Indian or Alaska Native (SPECIFY principal tribe or community)
+    - Native Hawaiian or Other Pacific Islander
+    - Asian
+    - Some other race (SPECIFY)
+    - Not reported
+
+hispanic:
+  description: >
+    Are you of Hispanic, Latino, or Spanish origin?
+  enum:
+    - "Yes"
+    - "No"
+    - "Not reported"
+

@@ -69,16 +69,7 @@ properties:
       - "Not reported"
 
   race:
-    description: >
-      What is your race? SELECT ALL THAT APPLY
-    enum:
-      - White
-      - Black or African American
-      - American Indian or Alaska Native (SPECIFY principal tribe or community)
-      - Native Hawaiian or Other Pacific Islander
-      - Asian
-      - Some other race (SPECIFY)
-      - Not reported
+    $ref: "_definitions.yaml#/race"
 
   other_race:
     description: >
@@ -93,12 +84,7 @@ properties:
       - string
 
   hispanic:
-    description: >
-      Are you of Hispanic, Latino, or Spanish origin?
-    enum:
-      - "Yes"
-      - "No"
-      - "Not reported"
+    $ref: "_definitions.yaml#/hispanic"
 
   jewish:
     description: >
