@@ -136,6 +136,7 @@ properties:
   is_related_to_study:
     description: >
       Is this serious adverse event related to the study?
+
       Note,  "Possible" means:
       There is a reasonable possibility that 
       the incident, experience, or outcome may have been 
