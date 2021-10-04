@@ -141,14 +141,15 @@ properties:
       the incident, experience, or outcome may have been 
       caused by the procedures involved in the research. 
     enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
-
+      - 'None'
+      - Unlikely
+      - Possible
+      - Probable
+      - Definite
   was_expected:
     enum:
-      - 'Yes'
-      - 'No'
+      - Expected
+      - Unexpected
       - Not reported
   #get hubs who are taking MOUD intervention
   on_opioid_medication:
