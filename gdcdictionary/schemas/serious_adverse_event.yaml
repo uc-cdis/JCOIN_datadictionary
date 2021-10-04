@@ -136,19 +136,28 @@ properties:
   is_related_to_study:
     description: >
       Is this serious adverse event related to the study?
-      Note,  possible means:
+
+      Note,  "Possible" means:
       There is a reasonable possibility that 
       the incident, experience, or outcome may have been 
       caused by the procedures involved in the research. 
     enum:
-      - 'Yes'
-      - 'No'
-      - Not reported
-
+      - 'None'
+      - Unlikely
+      - Possible
+      - Probable
+      - Definite
   was_expected:
+    description: >
+      Expected or unexpected?
+      Note, "Unexpected" means unexpected in nature, severity, or frequency given
+      (a) the research procedures that are described in the protocol-related documents 
+      and informed consent document and 
+      (b) the characteristics of the population being studied.
+
     enum:
-      - 'Yes'
-      - 'No'
+      - Expected
+      - Unexpected
       - Not reported
   #get hubs who are taking MOUD intervention
   on_opioid_medication:
