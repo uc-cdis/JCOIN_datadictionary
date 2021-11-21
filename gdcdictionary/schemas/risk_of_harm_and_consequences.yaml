@@ -20,17 +20,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: follow_ups
+  - name: time_points
     backref: risk_of_harm_and_consequencess
     label: performed_at
-    target_type: follow_up
+    target_type: time_point
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - follow_ups
+  - time_points
 
 uniqueKeys:
   - [ id ]
@@ -230,5 +230,5 @@ properties:
       - "Past month"
       - "Don't know"
     
-  follow_ups:
+  time_points:
     $ref: "_definitions.yaml#/to_one"

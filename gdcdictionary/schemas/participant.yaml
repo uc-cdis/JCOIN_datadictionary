@@ -75,3 +75,9 @@ properties:
     enum:
       - 'Client'
       - 'Staff'
+  current_status:
+    description: >
+      - 'In Progress'
+      - 'Withdrawn'
+      - 'Disqualified'
+

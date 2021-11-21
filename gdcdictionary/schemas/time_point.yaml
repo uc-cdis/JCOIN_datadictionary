@@ -1,7 +1,7 @@
 schema: "http://json-schema.org/draft-04/schema#"
 
-id: "follow_up"
-title: Follow Up
+id: "time_point"
+title: Time Point
 type: object
 namespace: https://jcoin.datacommons.io/dd
 category: clinical
@@ -27,7 +27,7 @@ systemProperties:
 
 links:
   - name: participants
-    backref: follow_ups
+    backref: time_points
     label: describes
     target_type: participant
     multiplicity: many_to_one
@@ -142,7 +142,7 @@ properties:
       Year of the visit.
     type: integer
 
-  days_to_follow_up:
+  days_to_time_point:
     description: >
       Number of days between the date used for index and the date the patient was seen or contacted at follow-up.
     type: integer
@@ -227,7 +227,7 @@ properties:
       TBD
     type: boolean
 
-  completed_follow_up:
+  completed_time_point:
     description: >
       TBD
     type: boolean

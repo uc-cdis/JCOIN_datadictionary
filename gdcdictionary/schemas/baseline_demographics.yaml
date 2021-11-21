@@ -20,17 +20,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: follow_ups
+  - name: time_points
     backref: baseline_demographics
     label: performed_at
-    target_type: follow_up
+    target_type: time_point
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - follow_ups
+  - time_points
 
 uniqueKeys:
   - [ id ]
@@ -38,7 +38,117 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
-    
+
+  O1:
+    description: >
+      What sex was originally listed on your birth certificate?
+    enum:
+      - "Male"
+      - "Female"
+      - "Decline to answer"
+
+  O2_gender_identity:
+    description: >
+      Do you think of yourself as...
+    enum:
+      - "Male"
+      - "Female"
+      - "Transgender man/trans man/female-to-male (FTM)"
+      - "Transgender woman/trans woman/male-to-female (MTF)"
+      - "Genderqueer/gender nonconforming/neither exclusively male nor female"
+      - "Additional gender category (or other)"
+      - "Not reported"
+
+  O2_2_gender_identity_specify:
+    description: >
+      Additional gender category (or other) 
+    type:
+      - string
+      
+  D4a:
+    description: >
+      What was your sex at birth? 
+    enum:
+      - "Male"
+      - "Female"
+
+  D4b:
+    description: >
+      What is your gender identity? 
+    enum:
+      - "Male"
+      - "Female"
+      - "Transgender"
+      - "Gender nonconforming"
+      - "Not reported"
+
+  D4c:
+    description: >
+      Sexual Orientation. Do you think of yourself as . . . 
+    enum:
+      - "Straight or heterosexual"
+      - "Lesbian or gay"
+      - "Bisexual"
+      - "Queer, pansexual, and/or questioning"
+      - "Something else (SPECIFY _________)"
+
+  D4c_specify:
+    description: >
+      Sexual Orientation. Do you think of yourself as . . .not matching one of the enumerated racial categories.
+    type:
+      - string
+
+  D4d:
+    description: >
+      Have you ever been pregnant?
+    enum:
+      - "Never been pregnant"
+      - "Currently pregnant"
+      - "Previously pregnant, had a child"
+      - "Previously pregnant, did not have a child"
+
+  D5:
+    description: >
+      What is your marital status?
+    enum:
+      - "Married [GO TO D6]"
+      - "Widowed"
+      - "Divorced"
+      - "Separated"
+      - "Never married"
+
+  D5a:
+    description: >
+      Are you currently living as married with a romantic partner?
+    enum:
+      - "Yes, I am living as married with partner"
+      - "No, I am not living as married with partner"
+
+  D6:
+    description: >
+      What is the highest grade or level of school you have completed or the highest degree you have received?  
+    enum:
+      - "Did not complete high school. HIGHEST GRADE COMPLETED ________"
+      - "GED or equivalent"
+      - "Regular high school diploma"
+      - "Some college credit, but less than 1 year of college credit"
+      - "1 or more years of college credit, but no degree"
+      - "Associate’s Degree (e.g., AA or AS)"
+      - "Graduate degree (MSW, MA, MS, JD, MD, DSW, EdD, Ph.D, etc.)"
+      - "Other (specify)"
+
+  D6_1:
+     description: >
+      HIGHEST GRADE COMPLETED
+     type:
+      - string
+
+  D6_2:
+    description: >
+      What is the highest grade or level of school you have completed or the highest degree you have received, not matching one of the enumerated categories.
+    type:
+      - string
+      
   D7a:
     description: >
       How many people, including yourself, are there in your household?
@@ -323,5 +433,5 @@ properties:
       - "No"
       - "Yes"
     
-  follow_ups:
+  time_points:
     $ref: "_definitions.yaml#/to_one"

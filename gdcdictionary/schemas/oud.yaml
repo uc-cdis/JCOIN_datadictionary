@@ -21,17 +21,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: follow_ups
+  - name: time_points
     backref: ouds
     label: performed_at
-    target_type: follow_up
+    target_type: time_point
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - follow_ups
+  - time_points
 
 uniqueKeys:
   - [ id ]
@@ -213,5 +213,5 @@ properties:
     type:
       - string
       
-  follow_ups:
+  time_points:
     $ref: "_definitions.yaml#/to_one"
