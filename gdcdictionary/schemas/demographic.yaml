@@ -1,15 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "demographic"
-title: Demographic
+id: "baseline_demographics"
+title: Baseline Demographics
 type: object
-namespace: https://jcoin.datacommons.io/dd
 category: clinical
 program: '*'
 project: '*'
 description: >
-  Data for the characterization of the participant by means of segementing the population (e.g.,
-  characterization by age, sex, or race).
+    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
 additionalProperties: false
 submittable: true
 validators: null
@@ -22,114 +20,24 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: participants
-    backref: demographics
-    label: describes
-    target_type: participant
-    multiplicity: one_to_one
+  - name: time_points
+    backref: baseline_demographics
+    label: performed_at
+    target_type: time_point
+    multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - participants 
-  - gender
-  - race
-  - hispanic
+  - time_points
+
 uniqueKeys:
-  #unclear if want submitter ID for clinical
-  - [id]
-  - [project_id, submitter_id]
+  - [ id ]
+  - [ project_id, submitter_id ]
 
 properties:
-  type:
-    type: string
-    
-  id:
-    $ref: "_definitions.yaml#/UUID"
-    systemAlias: node_id
-
-  state:
-    $ref: "_definitions.yaml#/state"
-
-  submitter_id:
-    type:
-      - string
-      - "null"
-
-  gender: #using D4b iniitially. TODO: correct distinctions?
-    description: >
-      What is your gender identity? 
-    enum:
-      - "Male"
-      - "Female"
-      - "Transgender"
-      - "Gender nonconforming"
-      - "Something else"
-      - "Not reported"
-
-  race:
-    $ref: "_definitions.yaml#/race"
-
-  other_race:
-    description: >
-      Racial designation not matching one of the enumerated racial categories.
-    type:
-      - string
-
-  principal_tribe_community:
-    description: >
-      Principal tribe or community not matching one of the enumerated racial categories.
-    type:
-      - string
-
-  hispanic:
-    $ref: "_definitions.yaml#/hispanic"
-
-  jewish:
-    description: >
-      Whether a participant describes him or herself as Jewish.
-    enum:
-      - "Yes"
-      - "No"
-      - Unknown
-
-  year_of_birth:
-    term:
-      $ref: "_terms.yaml#/year_of_birth"
-    type:
-      - number
-      - "null"
-
-  age:
-    description: >
-      About how old are you?
-    type:
-      - integer
-    
-  electronic_health_record:
-    description: >
-      tbd
-    type:
-      - string
-
-  date_and_cause_of_death_per_ICD_10_codes:
-    description: >
-      tbd
-    type:
-      - string
-
-  vital_statistics_for_count_of_overdose_deaths:
-    description: >
-      tbd
-    type:
-      - string
-
-  Death_records_using_admin_data:
-    description: >
-      tbd
-    type:
-      - string
+  $ref: "_definitions.yaml#/ubiquitous_properties"
 
   O1:
     description: >
@@ -240,12 +148,290 @@ properties:
       What is the highest grade or level of school you have completed or the highest degree you have received, not matching one of the enumerated categories.
     type:
       - string
+      
+  D7a:
+    description: >
+      How many people, including yourself, are there in your household?
+    type:
+      - integer
 
-  participants:
+  D7b:
+    description: >
+      HHow many of the people in your household are under the age of 18?
+    type:
+      - integer
+
+  D7c:
+    description: >
+      During the past 90 days (prior to entering jail or prison/ since your last assessment), what was the total income of everyone in your household together that provided you with support?
+    type:
+      - integer
+
+  D7d:
+    description: >
+      During the past 12 months, which of the following is the category that your total household income from legal sources would be in?
+    enum:
+      - "Less than $12,500"
+      - "$12,500 - $20,000"
+      - "$20,001 - $30,000"
+      - "$30,001 - $40,000"
+      - "$40,001 – $50,000"
+      - "$50,001 - $100,000"
+      - "More than $100,000"
+  
+  D7d1:
+    description: >
+      During the past 12 months (since last assessment), did your household receive any public assistance like unemployment, food stamps / TANF, subsidized housing, or supplemental security income?
+    enum:
+      - "No [GO TO D7e1]"
+      - "Yes"
+
+  D7d2:
+    description: >
+      During the past 12 months (since last assessment), approximately how much money has your household all together received from public assistance sources like unemployment, food stamps (TANF), subsidized housing, supplemental security income?
+    type:
+      - integer
+
+  D7e1:
+    description: >
+      During the past 12 months (since last assessment), did your household receive any other non-employment income sources like retirement, pension, alimony, child support, or interest?
+    enum:
+      - "No [GO TO D7e1]"
+      - "Yes"
+   
+  D7e2:
+    description: >
+      During the past 12 months (since last assessment), approximately how much money has your household all together received from other non-employment sources like retirement, pension, alimony, child support, interest?
+    type:
+      - integer
+
+  D7f1:
+    description: >
+      During the past 12 months (since last assessment), outside of employment described above, did you receive any other income from activities that might get you into trouble or be against the law, like dealing, gambling, theft for fencing?
+    enum:
+      - "No [GO TO D8]"
+      - "Yes"
+      - "Refuse to answer"
+
+  D7f2:
+    description: >
+      During the past 3 months (since last assessment), outside of employment described above, how much money did you earn from activities that might get you into trouble or be against the law, like dealing, gambling
+    type:
+      - integer
+
+  D8:
+    description: >
+      Which one of the following statements best describes your work or school situation (prior to entering jail or prison / currently)? (CLARIFY AND CODE)
+    enum:
+      - "Working full-time, 35 hours or more a week"
+      - "Working part-time, less than 35 hours a week"
+      - "Have a job where you are paid one day at a time (day labor"
+      - "Have a job, but not at work because of treatment, extended illness, maternity leave, furlough or strike"
+      - "Have a job but not at work because it is seasonal work"
+      - "Unemployed or laid off and looking for work"
+      - "Unemployed or laid off and not looking for work"
+      - "Full-time homemaker (keeping house)"
+      - "In school or training"
+      - "In school or training, but not currently going to classes"
+      - "Retired"
+      - "In jail, prison or detention"
+      - "Too disabled for work (Please describe disability)"
+      - "in the military"
+      - "Doing volunteer work"
+      - "Some other work situation (PLEASE DESCRIBE_______)"
+
+  D8_1:
+    description: >
+      During the past 3 months (since last assessment), outside of employment described above, how much money did you earn from activities that might get you into trouble or be against the law, like dealing, gambling, not matching one of the enumerated categories.
+    type:
+      - string
+
+  D8a:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you worked?
+    type:
+      - integer
+
+  D8b:
+    description: >
+      How many days per week do you typically work?
+    enum:
+      - "I don't typically work at all"
+      - "1 day a week"
+      - "2 days a week"
+      - "3 days a week"
+      - "4 days a week"
+      - "5 days a week"
+      - "6 days a week"
+
+  D8c:
+    description: >
+      Approximately how much do you make per hour?
+    type:
+      - number
+
+  D8d:
+    description: >
+      Approximately how much do you make per hour?
+    type:
+      - number
+
+  D8d_1:
+    description: >
+      Do any of the places that you work offer you the following benefit - Health Insurance 
+    enum:
+      - "Yes"
+      - "No"
+      - "Don't Know"
+
+  D8d_2:
+    description: >
+      Do any of the places that you work offer you the following benefit - Paid time off 
+    enum:
+      - "Yes"
+      - "No"
+      - "Don't Know"
+
+  D8d_3:
+    description: >
+      Do any of the places that you work offer you the following benefit - Defined benefit plan or pension
+    enum:
+      - "Yes"
+      - "No"
+      - "Don't Know"
+
+  D8d_4:
+    description: >
+      Do any of the places that you work offer you the following benefit - An arrangement such as a 401(k) or 403(b) plan, under which your employer contributes money towards your retirement every pay period 
+    enum:
+      - "Yes"
+      - "No"
+      - "Don't Know"
+
+  D8d_4:
+    description: >
+      Do any of the places that you work offer you the following benefit - An arrangement such as a 401(k) or 403(b) plan, under which your employer contributes money towards your retirement every pay period 
+    enum:
+      - "Yes"
+      - "No"
+      - "Don't Know"
+
+  D9:
+    description: >
+      Are you currently (or prior to entering jail or prison were you) covered by health insurance or some other kind of health care plan?
+    enum:
+      - "No [SKIP TO D10]"
+      - "Yes"
+
+  D9a:
+    description: >
+      What kind of health insurance or health care coverage (did/do) you have?  Include those that pay for only one type of service (such as nursing home care, accidents, or dental care).  Exclude private plans that only provide extra cash while hospitalized.  If you have more than one kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]
+    enum:
+      - "Private health insurance"
+      - "Medicare"
+      - "Medigap"
+      - "Medicaid ({If Available, Display State Plan Name})"
+      - "SCHIP (CHIP/Children’s Health Insurance Program)"
+      - "Military Health Care (Tricare/VA/CHAMP-VA)"
+      - "Indian Health Service"
+      - "State-Sponsored Health Plan ({If Available, Display State Plan Name})"
+      - "Other government program"
+      - "Single service plan (e.g., dental, vision, prescriptions)"
+      - "Don’t know"
+    
+  D10:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days were you uninsured?
+    type:
+      - integer
+
+  D11a:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you been to self-help group meetings (such as AA, NA, CA, or SMART Recovery) for your alcohol or other drug use? [NOTE: MAX DAYS = 90]
+    type:
+      - integer
+
+  D11b:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you been in other structured activities where no one was using alcohol or drugs? [NOTE: MAX DAYS = 90]
+    type:
+      - integer
+
+  D11c:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you been homeless or had to stay with someone else to avoid being homeless? [NOTE: MAX DAYS = 90]
+    type:
+      - integer
+
+  D11c:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you been homeless or had to stay with someone else to avoid being homeless? [NOTE: MAX DAYS = 90]
+    type:
+      - integer
+
+  D11d:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you lived in a homeless shelter or emergency housing? [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  D11e:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you lived where other people were using alcohol?  [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  D11f:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you lived where other people were using drugs?   [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  D11g:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you been to formal activities where people were using alcohol or drugs?  [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  D11h:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you gotten into trouble at home or with your family for any reason?   [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  D11i:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you had an argument in which you swore, cursed, threatened them, threw something, or pushed or hit them in any way?   [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  D11i:
+    description: >
+      During the 90 days (prior to entering jail or prison / since your last assessment), on how many days have you been attacked with a weapon, beaten, sexually abused or emotionally abused?   [NOTE: MAX DAYS = 90] 
+    type:
+      - integer
+
+  O3:
+    description: >
+      At your most recent release from [jail/prison], did you receive a Naloxone rescue kit (“Narcan kit”) to save yourself or someone else in the event of an opioid overdose? 
+    enum:
+      - "No GO TO P1a]"
+      - "Yes"
+      - "n/a not recently incarcerated"
+
+  O3a:
+    description: >
+      At your most recent release from [jail/prison], did you receive a Naloxone rescue kit (“Narcan kit”) to save yourself or someone else in the event of an opioid overdose? Have you had to use it?
+    enum:
+      - "No [skip O3b]"
+      - "Yes"
+
+  O3b:
+    description: >
+      At your most recent release from [jail/prison], did you receive a Naloxone rescue kit (“Narcan kit”) to save yourself or someone else in the event of an opioid overdose? Have you obtained a refill/replacement kit?
+    enum:
+      - "No"
+      - "Yes"
+    
+  time_points:
     $ref: "_definitions.yaml#/to_one"
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-  created_datetime:
-    $ref: "_definitions.yaml#/datetime"
-  updated_datetime:
-    $ref: "_definitions.yaml#/datetime"

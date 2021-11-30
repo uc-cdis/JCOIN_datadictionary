@@ -77,7 +77,11 @@ properties:
       - 'Staff'
   current_status:
     description: >
-      - 'In Progress'
-      - 'Withdrawn'
-      - 'Disqualified'
+      What is the current status of the client?
+    enum:
+      - 'On study'
+      - 'Dropped out'
+      - 'Withdrawn by investigator'
+      - 'Completed study'
+
 
