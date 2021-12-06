@@ -75,3 +75,11 @@ properties:
     enum:
       - 'Client'
       - 'Staff'
+  current_status:
+    description: >
+      What is the current status of the client?
+    enum:
+      - 'On study'
+      - 'Dropped out'
+      - 'Withdrawn by investigator'
+      - 'Completed study'
