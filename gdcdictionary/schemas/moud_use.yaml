@@ -1,0 +1,272 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "moud_questionnaire"
+title: MOUD Lifetime/Past Month Use Questionnaire
+type: object
+namespace: https://jcoin.datacommons.io/dd
+category: clinical
+program: '*'
+project: '*'
+description: >
+  Description.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: time_points
+    backref: moud_questionnaire
+    label: performed_at
+    target_type: time_point
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - participants
+
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  U14f:
+    description: >
+      Interview conducted with participant during incarceration? ; If "NO" [GO TO U15 AND SKIP ALL U15_2 AND U15_3 ITEMS (the PTI items)]
+    enum:
+      - "Yes"
+      - "No"
+
+  U14g:
+    description: >
+      During the past 30 days how many days have you been incarcerated? (If [number of days] is less than 30 days, replace 30 days with actual number of days participant has been incarcerated for all U15_4 and U15_5 questions below.)
+    type: integer
+
+  U15:
+    description: >
+      Have you ever been prescribed and taken medication to treat opioid use disorder? [illicit use should be excluded]; [0] No [GO TO J1], [1] Yes
+    enum:
+      - "0"
+      - "1" 
+
+  U15a1:
+    description: >
+      Buprenorphine-naloxone or buprenorphine daily sublingual (e.g. Suboxone© film or tablet, generic films or tablets, or Subutex tablets); Lifetime months.
+    type: integer
+
+  U15a2:
+    description: >
+      Buprenorphine-naloxone or buprenorphine daily sublingual (e.g. Suboxone© film or tablet, generic films or tablets, or Subutex tablets); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15a3:
+    description: >
+      Buprenorphine-naloxone or buprenorphine daily sublingual (e.g. Suboxone© film or tablet, generic films or tablets, or Subutex tablets); Past 30 days PTI dose/day.
+    type: integer
+
+  U15a4:
+    description: >
+      Buprenorphine-naloxone or buprenorphine daily sublingual (e.g. Suboxone© film or tablet, generic films or tablets, or Subutex tablets); Past [U14g] days .
+    type: integer
+
+  U15a5:
+    description: >
+      Buprenorphine-naloxone or buprenorphine daily sublingual (e.g. Suboxone© film or tablet, generic films or tablets, or Subutex tablets); Past [U14g] days dose/day.
+    type: integer
+
+  U15b1:
+    description: >
+      Buprenorphine injection (SUBLOCADE©); Lifetime months.
+    type: integer
+
+  U15b2:
+    description: >
+      Buprenorphine injection (SUBLOCADE©); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15b3:
+    description: >
+      Buprenorphine injection (SUBLOCADE©); Past 30 days PTI dose/day.
+    type: integer
+
+  U15b4:
+    description: >
+      Buprenorphine injection (SUBLOCADE©); Past [U14g] days .
+    type: integer
+
+  U15b5:
+    description: >
+      Buprenorphine injection (SUBLOCADE©); Past [U14g] days dose/day.
+    type: integer
+
+  U15c1:
+    description: >
+      Buprenorphine weekly injection (BRIXADI©); Lifetime months.
+    type: integer
+
+  U15c2:
+    description: >
+      Buprenorphine weekly injection (BRIXADI©); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15c3:
+    description: >
+      Buprenorphine weekly injection (BRIXADI©); Past 30 days PTI dose/day.
+    type: integer
+
+  U15c4:
+    description: >
+      Buprenorphine weekly injection (BRIXADI©); Past [U14g] days .
+    type: integer
+
+  U15c5:
+    description: >
+      Buprenorphine weekly injection (BRIXADI©); Past [U14g] days dose/day.
+    type: integer
+
+  U15d1:
+    description: >
+      Buprenorphine monthly injection (BRIXADI©); Lifetime months.
+    type: integer
+
+  U15d2:
+    description: >
+      Buprenorphine monthly injection (BRIXADI©); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15d3:
+    description: >
+      Buprenorphine monthly injection (BRIXADI©); Past 30 days PTI dose/day.
+    type: integer
+
+  U15d4:
+    description: >
+      Buprenorphine monthly injection (BRIXADI©); Past [U14g] days .
+    type: integer
+
+  U15d5:
+    description: >
+      Buprenorphine monthly injection (BRIXADI©); Past [U14g] days dose/day.
+    type: integer
+
+  U15e1:
+    description: >
+      Buprenorphine 6-month implant (Probuphine©); Lifetime months.
+    type: integer
+
+  U15e2:
+    description: >
+      Buprenorphine 6-month implant (Probuphine©); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15e3:
+    description: >
+      Buprenorphine 6-month implant (Probuphine©); Past 30 days PTI dose/day.
+    type: integer
+
+  U15e4:
+    description: >
+      Buprenorphine 6-month implant (Probuphine©); Past [U14g] days .
+    type: integer
+
+  U15e5:
+    description: >
+      Buprenorphine 6-month implant (Probuphine©); Past [U14g] days dose/day.
+    type: integer
+
+  U15f1:
+    description: >
+      Naltrexone daily (oral); Lifetime months.
+    type: integer
+
+  U15f2:
+    description: >
+      Naltrexone daily (oral); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15f3:
+    description: >
+      Naltrexone daily (oral); Past 30 days PTI dose/day.
+    type: integer
+
+  U15f4:
+    description: >
+      Naltrexone daily (oral); Past [U14g] days .
+    type: integer
+
+  U15f5:
+    description: >
+      Naltrexone daily (oral); Past [U14g] days dose/day.
+    type: integer
+
+  U15g1:
+    description: >
+      Naltrexone monthly injection (Vivitrol©); Lifetime months.
+    type: integer
+
+  U15g2:
+    description: >
+      Naltrexone monthly injection (Vivitrol©); Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15g3:
+    description: >
+      Naltrexone monthly injection (Vivitrol©); Past 30 days PTI dose/day.
+    type: integer
+
+  U15g4:
+    description: >
+      Naltrexone monthly injection (Vivitrol©); Past [U14g] days .
+    type: integer
+
+  U15g5:
+    description: >
+      Naltrexone monthly injection (Vivitrol©); Past [U14g] days dose/day.
+    type: integer
+
+  U15h1:
+    description: >
+      Methadone daily; Lifetime months.
+    type: integer
+
+  U15h2:
+    description: >
+      Methadone daily; Past 30 days Prior to Incarceration (PTI) days.
+    type: integer
+
+  U15h3:
+    description: >
+      Methadone daily; Past 30 days PTI dose/day.
+    type: integer
+
+  U15h4:
+    description: >
+      Methadone daily; Past [U14g] days .
+    type: integer
+
+  U15h5:
+    description: >
+      Methadone daily; Past [U14g] days dose/day.
+    type: integer
+
+
+
+  participants:
+    $ref: "_definitions.yaml#/to_one"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"

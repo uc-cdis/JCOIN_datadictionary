@@ -7,8 +7,7 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-  Genetic Research Center (GRC) or other clinical center at which research
-  participants are recruited.
+Information regarding the study protocol
 additionalProperties: false
 submittable: true
 validators: null

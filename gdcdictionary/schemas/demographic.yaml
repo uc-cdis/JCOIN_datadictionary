@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "baseline_demographics"
-title: Baseline Demographics
+id: "demographics"
+title: Demographics
 type: object
 category: clinical
 program: '*'
@@ -21,7 +21,7 @@ systemProperties:
 
 links:
   - name: time_points
-    backref: baseline_demographics
+    backref: demographics
     label: performed_at
     target_type: time_point
     multiplicity: many_to_one

@@ -1,0 +1,234 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "risk_of_harm_and_consequence"
+title: Risk of Harm and Consequence
+type: object
+category: clinical
+program: '*'
+project: '*'
+description: >
+"RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW (CONSISTENT WITH HUB CONSENT FORMS)"
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: time_points
+    backref: risk_of_harm_and_consequences
+    label: performed_at
+    target_type: time_point
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - time_points
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+    
+  R1a:
+    description: >
+      When was the last time you had two or more sex partners during the same time period?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1b:
+    description: >
+      When was the last time you had sex without using any kind of condom, dental dam or other barrier to protect you and your partner from diseases or pregnancy?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1c:
+    description: >
+      When was the last time you had sex while you or your partner was intoxicated from alcohol or other drugs?
+    enum:
+      - "Not at all"
+      - "A little bit of pain"
+      - "A moderate amount of pain"
+      - "Quite a bit of pain"
+      - "Severe or unbearable pain"
+
+  R1d:
+    description: >
+      When was the last time you used a needle to inject drugs like heroin, cocaine or amphetamines?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1g:
+    description: >
+      When was the last time you were attacked with a weapon, including a gun, knife, stick, bottle or other weapon?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1h:
+    description: >
+      When was the last time you were physically abused, to the point that you had bruises, cuts or broken bones?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1j:
+    description: >
+      When was the last time you were sexually abused, where someone pressured or forced you to participate in sexual acts against your will, including your regular sex partner, a family member or friend?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1K:
+    description: >
+      When was the last time you were emotionally abused, where someone did or said things to make you feel very bad about yourself or your life?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1m:
+    description: >
+       When was the last time you were physically, sexual or emotionally abused several times or over a long period of time?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R1n:
+    description: >
+      When was the last time you were afraid for your life or that you might be seriously injured by the abuse?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R2a:
+    description: >
+      When was the last time you became very distressed and upset when something reminded you of the past?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R2b:
+    description: >
+      When was the last time you thought about ending your life or dying by suicide?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+
+  R3a:
+    description: >
+      When was the last time you were told by a doctor or nurse that you had: Human Immunodeficiency Virus, HIV or AIDS?
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+      - "Don't know"
+
+  R3b:
+    description: >
+      When was the last time you were told by a doctor or nurse that you had: Hepatitis C? 
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+      - "Don't know"
+
+  R3c:
+    description: >
+      When was the last time you were told by a doctor or nurse that you had: Hepatitis B?  
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+      - "Don't know"
+
+  R3d:
+    description: >
+      When was the last time you were told by a doctor or nurse that you had: Other sexually transmitted diseases or infections, such as syphilis.  
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+      - "Don't know"
+
+  R3e:
+    description: >
+      When was the last time you were told by a doctor or nurse that you had: Tuberculosis or TB? 
+    enum:
+      - "Never"
+      - "More than a year ago"
+      - "7 to 12 months ago"
+      - "4 to 6 months ago"
+      - "2 to 3 months ago"
+      - "Past month"
+      - "Don't know"
+    
+  time_points:
+    $ref: "_definitions.yaml#/to_one"
