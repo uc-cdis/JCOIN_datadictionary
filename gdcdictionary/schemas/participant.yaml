@@ -75,7 +75,7 @@ properties:
     enum:
       - 'Client'
       - 'Staff'
-  current_status:
+  current_client_status:
     description: >
       What is the current status of the client?
     enum:
@@ -83,3 +83,8 @@ properties:
       - 'Dropped out'
       - 'Withdrawn by investigator'
       - 'Completed study'
+  
+  state_of_client_enrollment:
+    description: >
+      State where client was enrolled
+    type: string
