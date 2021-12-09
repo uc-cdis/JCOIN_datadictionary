@@ -45,8 +45,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -57,8 +56,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -69,8 +67,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -81,8 +78,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -93,8 +89,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -105,8 +100,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -117,8 +111,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
@@ -129,8 +122,7 @@ properties:
     enum:
       - "Never"
       - "More than a year ago"
-      - "7 to 12 months ago"
-      - "4 to 6 months ago"
+      - "4 to 12 months ago"
       - "2 to 3 months ago"
       - "Past month"
       - "Don't know"
