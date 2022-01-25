@@ -1,0 +1,96 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "demographic_reporting"
+title: Demographic For Reporting
+type: object
+namespace: https://jcoin.datacommons.io/dd
+category: clinical
+program: '*'
+project: '*'
+description: >
+Demographic data formatted specifically for reporting purposes
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: participants
+    backref: demographics
+    label: describes
+    target_type: participant
+    multiplicity: one_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - participants 
+  - gender
+  - race
+  - hispanic
+uniqueKeys:
+  #unclear if want submitter ID for clinical
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    type: string
+    
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    type:
+      - string
+      - "null"
+
+  gender: #using D4b iniitially. TODO: correct distinctions?
+    description: >
+      What is your gender identity? The core measures specify either item O2 or D4b can be used. If O2 used, 
+      records are mapped onto D4b for reporting purposes.
+    enum:
+      - "Male"
+      - "Female"
+      - "Transgender"
+      - "Gender nonconforming"
+      - "Something else"
+      - "Not reported"
+
+race:
+  description: >
+    What is your race? This question comes from the D3 core measure item. 
+    However, given an individual can be more than one race category, for reporting,
+    we added an additional multiracial category.
+  enum:
+    - White
+    - Black or African American
+    - American Indian or Alaska Native (SPECIFY principal tribe or community)
+    - Native Hawaiian or Other Pacific Islander
+    - Asian
+    - Some other race (SPECIFY)
+    - Multiracial
+    - Not reported
+
+  hispanic:
+    $ref: "_definitions.yaml#/hispanic"
+
+  participants:
+    $ref: "_definitions.yaml#/to_one"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
