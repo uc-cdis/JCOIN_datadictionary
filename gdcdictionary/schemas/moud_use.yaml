@@ -8,7 +8,8 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  Description.
+  This section of questions, collected only at baseline, asks about medications for opioid use disorder (MOUD) 
+  over the client's lifetime and the past month.
 additionalProperties: false
 submittable: true
 validators: null

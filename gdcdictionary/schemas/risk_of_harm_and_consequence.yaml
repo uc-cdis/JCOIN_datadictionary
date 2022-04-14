@@ -7,7 +7,8 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-"RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW (CONSISTENT WITH HUB CONSENT FORMS)"
+  This core measure section asks questions about risky behavior to a client's health and 
+  physical/mental abuse and harm (or perceived risk thereof).
 additionalProperties: false
 submittable: true
 validators: null

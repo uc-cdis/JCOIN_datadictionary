@@ -55,10 +55,10 @@ properties:
       Visit number
     type: integer
     
-  visit_id:
-    description: >
-      ID at time of interview (prior to transfer)
-    type: integer
+  # visit_id:
+  #   description: >
+  #     ID at time of interview (prior to transfer)
+  #   type: integer
 
   visit_name:
     description: >
@@ -72,6 +72,17 @@ properties:
       - Baseline Visit
       - Follow-up Visit
       - Abbreviated Visit (Record in ABRV file)
+
+  visit_dt:
+    description: >
+      Visit date (shifted) 
+
+  days_to_last_time_point:
+    description: >
+      Time interval from the date of last follow up to the date of initial pathologic diagnosis,
+      represented as a calculated number of days.
+    type:
+      - integer
 
   participants:
     $ref: "_definitions.yaml#/to_one"

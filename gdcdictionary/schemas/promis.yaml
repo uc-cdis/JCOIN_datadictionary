@@ -7,7 +7,8 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
+  This core measure section, the Patient-Reported Outcomes Measurement Information System (PROMIS), 
+  is a set of standardized questions about physical activity and mental health.
 additionalProperties: false
 submittable: true
 validators: null
