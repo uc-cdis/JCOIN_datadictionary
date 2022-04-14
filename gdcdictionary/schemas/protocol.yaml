@@ -7,7 +7,7 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-Information regarding the study protocol
+  Information regarding the study protocol
 additionalProperties: false
 submittable: true
 validators: null

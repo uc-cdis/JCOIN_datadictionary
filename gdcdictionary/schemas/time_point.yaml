@@ -76,6 +76,7 @@ properties:
   visit_dt:
     description: >
       Visit date (shifted) 
+    $ref: "_definitions.yaml#/datetime"
 
   days_to_last_time_point:
     description: >
