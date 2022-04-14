@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "moud_questionnaire"
-title: MOUD Lifetime/Past Month Use Questionnaire
+id: "moud_use"
+title: MOUD Lifetime/Past Month Use
 type: object
 namespace: https://jcoin.datacommons.io/dd
 category: clinical
@@ -22,11 +22,11 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: time_points
-    backref: moud_questionnaire
+  - name: participants
+    backref: moud_uses
     label: performed_at
-    target_type: time_point
-    multiplicity: many_to_one
+    target_type: participant
+    multiplicity: one_to_one
     required: true
 
 required:

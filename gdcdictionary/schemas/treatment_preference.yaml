@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "treatment_preferences_questionnaire"
-title: Treatment Preferences Questionnaire
+id: "treatment_preference"
+title: Treatment Preference
 type: object
 category: clinical
 program: '*'
@@ -21,7 +21,7 @@ systemProperties:
 
 links:
   - name: time_points
-    backref: treatment_preferences_questionnaires
+    backref: treatment_preferences
     label: performed_at
     target_type: time_point
     multiplicity: many_to_one

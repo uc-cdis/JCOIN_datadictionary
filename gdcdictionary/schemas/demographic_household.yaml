@@ -1,6 +1,6 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "demographics_household"
+id: "demographic_household"
 title: Demographics - Household
 type: object
 category: clinical
@@ -21,7 +21,7 @@ systemProperties:
 
 links:
   - name: time_points
-    backref: demographics
+    backref: demographic_households
     label: performed_at
     target_type: time_point
     multiplicity: many_to_one
