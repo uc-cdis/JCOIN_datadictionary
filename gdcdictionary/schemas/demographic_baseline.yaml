@@ -1,15 +1,15 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "demographic"
-title: Demographic
+id: "demographic_baseline"
+title: Demographic - Baseline and Reporting
 type: object
 namespace: https://jcoin.datacommons.io/dd
 category: clinical
 program: '*'
 project: '*'
 description: >
-  Data for the characterization of the participant by means of segementing the population (e.g.,
-  characterization by age, sex, or race).
+  Demographic data collected only at baseline and additional fields formatted specifically for reporting purposes.
+
 additionalProperties: false
 submittable: true
 validators: null
@@ -37,7 +37,6 @@ required:
   - race
   - hispanic
 uniqueKeys:
-  #unclear if want submitter ID for clinical
   - [id]
   - [project_id, submitter_id]
 
@@ -57,9 +56,10 @@ properties:
       - string
       - "null"
 
-  gender: #using D4b iniitially. TODO: correct distinctions?
+  gender: 
     description: >
-      What is your gender identity? 
+      What is your gender identity? The core measures specify either item O2 or D4b can be used. If O2 used, 
+      records are mapped onto D4b for reporting purposes. (variable used for reporting only)
     enum:
       - "Male"
       - "Female"
@@ -69,68 +69,24 @@ properties:
       - "Not reported"
 
   race:
-    $ref: "_definitions.yaml#/race"
-
-  other_race:
     description: >
-      Racial designation not matching one of the enumerated racial categories.
-    type:
-      - string
-
-  principal_tribe_community:
-    description: >
-      Principal tribe or community not matching one of the enumerated racial categories.
-    type:
-      - string
+      What is your race? This question comes from the D3 core measure item. 
+      However, given an individual can be more than one race category, for reporting,
+      we added an additional multiracial category. (variable used for reporting only)
+    enum:
+      - White
+      - Black or African American
+      - American Indian or Alaska Native 
+      - Native Hawaiian or Other Pacific Islander
+      - Asian
+      - Some other race
+      - Multiracial
+      - Not reported
 
   hispanic:
     $ref: "_definitions.yaml#/hispanic"
 
-  jewish:
-    description: >
-      Whether a participant describes him or herself as Jewish.
-    enum:
-      - "Yes"
-      - "No"
-      - Unknown
-
-  year_of_birth:
-    term:
-      $ref: "_terms.yaml#/year_of_birth"
-    type:
-      - number
-      - "null"
-
-  age:
-    description: >
-      About how old are you?
-    type:
-      - integer
-    
-  electronic_health_record:
-    description: >
-      tbd
-    type:
-      - string
-
-  date_and_cause_of_death_per_ICD_10_codes:
-    description: >
-      tbd
-    type:
-      - string
-
-  vital_statistics_for_count_of_overdose_deaths:
-    description: >
-      tbd
-    type:
-      - string
-
-  Death_records_using_admin_data:
-    description: >
-      tbd
-    type:
-      - string
-
+  # below are the baseline core measure items asked only at baseline
   O1:
     description: >
       What sex was originally listed on your birth certificate?

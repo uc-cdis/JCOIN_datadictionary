@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "treatment_preferences_questionnaire"
-title: Treatment Preferences Questionnaire
+id: "treatment_preference"
+title: Treatment Preference
 type: object
 category: clinical
 program: '*'
 project: '*'
 description: >
-    The interviewer will read the statements below to the participant first. We are interested in the type of opioid use disorder treatment the participant would most prefer if all options were available to the participant now. The questions below ask in more detail about the participants most preferred treatment type. (Please note: the treatment types below are not necessarily offered in this study).
+  This core measure section asks a client preferences for treating opioid use disorder (OUD)
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,17 +20,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: follow_ups
-    backref: treatment_preferences_questionnaires
+  - name: time_points
+    backref: treatment_preferences
     label: performed_at
-    target_type: follow_up
+    target_type: time_point
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - follow_ups
+  - time_points
 
 uniqueKeys:
   - [ id ]
@@ -85,5 +85,5 @@ properties:
     type: string
 
     
-  follow_ups:
+  time_points:
     $ref: "_definitions.yaml#/to_one"
