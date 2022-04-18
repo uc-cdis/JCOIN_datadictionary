@@ -9,7 +9,7 @@ program: '*'
 project: '*'
 description: >
   Some measures are collected at all time points (e.g., both baseline and follow ups).
-  This node captures information related to a time point. The nodes (ie core measure sections) below
+  This node captures information related to a time point. The nodes (ie sections) below
   this node are collected at follow up and baseline time points.
 additionalProperties: false
 submittable: true
@@ -73,18 +73,20 @@ properties:
 
   shifted_visit_dt:
     description: >
-      The visit date of a given time point which is shifted by a random fixed amount within an individual
-      and converted to integer format.
+      The visit date of a given time point which is shifted by a random fixed number of days (182 days before or after the actual date)
+      within an individual. 
 
-      The fixed, random shift provides date de-identification while shifting all dates within
-      an individual the same amount allows the 
-    $ref: "_definitions.yaml#/datetime"
+      The fixed (ie same shift amount within each individual), random shift provides date de-identification while retaining 
+      the interval between these (de-identified) dates.
+    oneOf:
+      - type: string
+        format: date
+      - type: 'null'
 
   days_from_baseline_session:
     description: >
       Time interval from the date of assessment session to the first assessment session (ie baseline)
-    type:
-      - integer
+    type: integer
 
   participants:
     $ref: "_definitions.yaml#/parent_node"
