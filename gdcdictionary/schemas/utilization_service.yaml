@@ -1,13 +1,15 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "utilization_services_questionnaire"
-title: Utilization of Services Questionnaire
+id: "utilization_service"
+title: Utilization of Service
 type: object
 category: clinical
 program: '*'
 project: '*'
 description: >
-    Description.
+    This core measure section asks questions about how a client has utilized various healthcare services
+    both in general and specifically for substance use over a time period 
+    (the time period depends on the session and study design)
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,17 +22,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: follow_ups
-    backref: utilization_services_questionnaires
+  - name: time_points
+    backref: utilization_services
     label: performed_at
-    target_type: follow_up
+    target_type: time_point
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - follow_ups
+  - time_points
 
 uniqueKeys:
   - [ id ]
@@ -228,5 +230,5 @@ properties:
         - "5"
 
     
-  follow_ups:
+  time_points:
     $ref: "_definitions.yaml#/to_one"

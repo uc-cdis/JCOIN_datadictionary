@@ -1,0 +1,89 @@
+schema: "http://json-schema.org/draft-04/schema#"
+
+id: "time_point"
+title: Time Point
+type: object
+namespace: https://jcoin.datacommons.io/dd
+category: clinical
+program: '*'
+project: '*'
+description: >
+  A visit by a patient or study participant to a medical professional. A clinical encounter that
+  encompasses planned and unplanned trial interventions, procedures and assessments that may be
+  performed on a subject. A visit has a start and an end, each described with a rule. The process
+  by which information about the health status of an individual is obtained before and after a study
+  has officially closed; an activity that continues something that has already begun or that repeats
+  something that has already been done.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: participants
+    backref: time_points
+    label: describes
+    target_type: participant
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - participants
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  version_data:
+    description: >
+      Version number of data
+    type: string
+
+  visit_number:
+    description: >
+      Visit number
+    type: integer
+    
+  # visit_id:
+  #   description: >
+  #     ID at time of interview (prior to transfer)
+  #   type: integer
+
+  visit_name:
+    description: >
+      Visit ID (string)
+    type: string
+
+  visit_type:
+    description: >
+      Define if the visit is a follow-up or the baseline visit.
+    enum:
+      - Baseline Visit
+      - Follow-up Visit
+      - Abbreviated Visit (Record in ABRV file)
+
+  visit_dt:
+    description: >
+      Visit date (shifted) 
+    $ref: "_definitions.yaml#/datetime"
+
+  days_to_last_time_point:
+    description: >
+      Time interval from the date of last follow up to the date of initial pathologic diagnosis,
+      represented as a calculated number of days.
+    type:
+      - integer
+
+  participants:
+    $ref: "_definitions.yaml#/to_one"

@@ -1,13 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "justice_involvement_questionnaire"
-title: Justice Involvement Questionnaire
+id: "justice_involvement"
+title: Justice Involvement 
 type: object
 category: clinical
 program: '*'
 project: '*'
 description: >
-    Description.
+    This section asks client's about their involvement in the justice system 
+    including illegal activity, arrests, convictions, jail time, etc. 
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,17 +21,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: follow_ups
-    backref: justice_involvement_questionnaires
+  - name: time_points
+    backref: justice_involvements
     label: performed_at
-    target_type: follow_up
+    target_type: time_point
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - follow_ups
+  - time_points
 
 uniqueKeys:
   - [ id ]
@@ -338,5 +339,5 @@ properties:
 
 
     
-  follow_ups:
+  time_points:
     $ref: "_definitions.yaml#/to_one"
