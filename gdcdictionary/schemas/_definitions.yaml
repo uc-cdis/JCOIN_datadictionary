@@ -259,6 +259,10 @@ workflow_properties:
 ubiquitous_properties:
   type:
     type: string
+    description: >
+      The id of a node (ie node "type"). 
+      For example, for the node named "demographic", all records should have "demographic" populated in the
+      this field.
   id:
     $ref: "#/UUID"
     systemAlias: node_id
@@ -298,3 +302,9 @@ hispanic:
     - "No"
     - "Not reported"
 
+parent_node:
+    $ref: "#/to_one"
+    description: >
+      References to the parent node. Usually, submissions (e.g., a TSV file of records for this node) 
+      include the field <parent node name>.submitter_id 
+      to link records from this node to records from the parent node. 

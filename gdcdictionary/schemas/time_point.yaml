@@ -8,12 +8,9 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  A visit by a patient or study participant to a medical professional. A clinical encounter that
-  encompasses planned and unplanned trial interventions, procedures and assessments that may be
-  performed on a subject. A visit has a start and an end, each described with a rule. The process
-  by which information about the health status of an individual is obtained before and after a study
-  has officially closed; an activity that continues something that has already begun or that repeats
-  something that has already been done.
+  Some measures are collected at all time points (e.g., both baseline and follow ups).
+  This node captures information related to a time point. The nodes (ie sections) below
+  this node are collected at follow up and baseline time points.
 additionalProperties: false
 submittable: true
 validators: null
@@ -62,7 +59,8 @@ properties:
 
   visit_name:
     description: >
-      Visit ID (string)
+      The formatted name of the visit such as Baseline,
+      1 month follow up, 12 month follow up etc.
     type: string
 
   visit_type:
@@ -73,17 +71,20 @@ properties:
       - Follow-up Visit
       - Abbreviated Visit (Record in ABRV file)
 
-  visit_dt:
+  shifted_visit_dt:
     description: >
-      Visit date (shifted) 
+      The visit date of a given time point which is shifted by a random fixed amount within an individual
+      and converted to integer format.
+
+      The fixed, random shift provides date de-identification while shifting all dates within
+      an individual the same amount allows the 
     $ref: "_definitions.yaml#/datetime"
 
-  days_to_last_time_point:
+  days_from_baseline_session:
     description: >
-      Time interval from the date of last follow up to the date of initial pathologic diagnosis,
-      represented as a calculated number of days.
+      Time interval from the date of assessment session to the first assessment session (ie baseline)
     type:
       - integer
 
   participants:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"

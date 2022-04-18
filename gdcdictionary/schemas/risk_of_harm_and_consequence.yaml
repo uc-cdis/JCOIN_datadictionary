@@ -232,4 +232,4 @@ properties:
       - "Don't know"
     
   time_points:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"

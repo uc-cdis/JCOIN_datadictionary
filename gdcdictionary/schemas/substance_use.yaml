@@ -7,7 +7,7 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  This collection of questions, asks about substance use (both overall and specific to opioid use) 
+  This core measure section, asks client's about substance use (e.g., overall and specific to opioid use) 
   either over the past 90 days or prior to entering jail (if baseline and depending on the study design) or
   since the last assessment (if baseline) 
 additionalProperties: false
@@ -264,4 +264,4 @@ properties:
       - integer 
     
   time_points:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"
