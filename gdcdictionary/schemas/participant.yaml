@@ -8,7 +8,7 @@ category: administrative
 program: '*'
 project: '*'
 description: >
-  The collection of all data related to a specific participant or other individuals with data (eg., staff) in the
+  The collection of all data related to a specific client (participant) or other individuals with data (eg., staff) in the
   context of a specific project.
 additionalProperties: false
 submittable: true
@@ -58,7 +58,7 @@ properties:
     items:
       type: string
   protocols:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"
   project_id:
     $ref: "_definitions.yaml#/project_id"
   created_datetime:

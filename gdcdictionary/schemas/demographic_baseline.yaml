@@ -198,7 +198,7 @@ properties:
       - string
 
   participants:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"
   project_id:
     $ref: "_definitions.yaml#/project_id"
   created_datetime:

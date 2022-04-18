@@ -7,7 +7,7 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-    This section asks client's about their involvement in the justice system 
+    This core measure section asks client's about their involvement in the justice system 
     including illegal activity, arrests, convictions, jail time, etc. 
 additionalProperties: false
 submittable: true
@@ -340,4 +340,4 @@ properties:
 
     
   time_points:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"
