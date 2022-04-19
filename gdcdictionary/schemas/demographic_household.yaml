@@ -6,8 +6,9 @@ type: object
 category: clinical
 program: '*'
 project: '*'
-description: >
-    Demographic data collected at all timepoints asking questions about a client's household. 
+description: > 
+    This core measure section, part of the overall Demographic section, asks client's about 
+    a client's household. These data are collected at all time points.
 additionalProperties: false
 submittable: true
 validators: null
@@ -324,4 +325,4 @@ properties:
       - "Yes"
     
   time_points:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"
