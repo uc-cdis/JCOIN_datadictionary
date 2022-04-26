@@ -39,7 +39,46 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
-    
+
+  # integer --> categorical for viewing in explorer page
+  J1_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  
+  J1a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+
+  J2_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  J2a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+
+  J2d_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  J3c_and_d_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  J5a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  #core measures 
   J1:
     description: >
       During the 90 days (prior to entering jail or prison/ since your last assessment), on how many days were you involved in any activities that might get you into trouble or be against the law besides drug use? 

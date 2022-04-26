@@ -40,7 +40,36 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
-    
+  
+
+  # integer --> categorical for viewing in explorer page
+  S3a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  S4a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4f_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4g_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4h_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4j_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  #core measures
   S1a:
     description: >
       When was the last time you used alcohol or other drugs weekly or more often? 
