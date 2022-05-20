@@ -24,7 +24,7 @@ links:
     backref: treatment_preferences
     label: performed_at
     target_type: time_point
-    multiplicity: many_to_one
+    multiplicity: one_to_one
     required: true
 
 required:
