@@ -7,7 +7,7 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  This collection of questions, asks about substance use (both overall and specific to opioid use) 
+  This core measure section, asks client's about substance use (e.g., overall and specific to opioid use) 
   either over the past 90 days or prior to entering jail (if baseline and depending on the study design) or
   since the last assessment (if baseline) 
 additionalProperties: false
@@ -26,7 +26,7 @@ links:
     backref: substance_uses
     label: performed_at
     target_type: time_point
-    multiplicity: many_to_one
+    multiplicity: one_to_one
     required: true
 
 required:
@@ -40,7 +40,36 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
-    
+  
+
+  # integer --> categorical for viewing in explorer page
+  S3a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  S4a_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4f_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4g_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4h_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+  S4j_category:
+    description: >
+      Categorical of variable for purposes of explorer display
+    type: string
+
+  #core measures
   S1a:
     description: >
       When was the last time you used alcohol or other drugs weekly or more often? 
@@ -264,4 +293,4 @@ properties:
       - integer 
     
   time_points:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"

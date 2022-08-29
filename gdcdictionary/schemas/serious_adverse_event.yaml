@@ -10,10 +10,10 @@ project: '*'
 description: >
   The most up to date information pertaining to a single SAE. 
   For example, if an SAE is submitted and the a follow up form is submitted with more up to date
-  information, this node will capture the most up to date information. However,
-  all files (ie initial and follow ups will be stored in a child node called serious_adverse_event_files)
-
-  Generated through the serious adverse event workflow node
+  information, this node will capture the most up to date information. 
+#However,
+#all files (ie initial and follow ups will be stored in a child node called serious_adverse_event_files)
+#Generated through the serious adverse event workflow node
 additionalProperties: false
 submittable: true
 validators: null
@@ -78,7 +78,7 @@ properties:
       - string
       - "null"
   protocols:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/parent_node"
   project_id:
     $ref: "_definitions.yaml#/project_id"
   created_datetime:
