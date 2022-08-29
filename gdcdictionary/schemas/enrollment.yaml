@@ -1,0 +1,62 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "enrollment"
+title: Enrollment
+type: object
+namespace: https://jcoin.datacommons.io/dd
+category: clinical
+program: '*'
+project: '*'
+description: >
+  Keeps track of the number of people enrolled in a study (i.e., number of people with
+  individual level data and excluding study's providing only aggregate administrative data).
+
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: participants
+    backref: enrollments
+    label: describes
+    target_type: participant
+    multiplicity: one_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    type: string
+    
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    type:
+      - string
+      - "null"
+  participants:
+    $ref: "_definitions.yaml#/parent_node"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
