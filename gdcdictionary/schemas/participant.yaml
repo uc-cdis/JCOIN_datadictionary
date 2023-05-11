@@ -66,9 +66,11 @@ properties:
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
   quarter_recruited:
-      - $ref: "_definitions.yaml#/quarterType"
-      - enum:
-        - Not reported
+    description: >
+      The quarter and year in which recruited for first study in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
+    
+      > Note, this is equivalent to `quarter_enrolled` in the core measure baseline schema. 
+    $ref: "_definitions.yaml#/quarterType"
   role_in_project:
     description: >
       Are they a client or research staff?

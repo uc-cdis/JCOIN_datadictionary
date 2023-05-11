@@ -93,7 +93,9 @@ properties:
   #     - 'No'
   #     - Not reported
   quarter_of_sae:
-    $ref: quarterType
+    description: >
+      The quarter and year in which serious adverse event was recorded XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
+    $ref: "_definitions.yaml#/quarterType"
   #propreties with suffix of "_occurred" are a part of
   # "Check which of the following occurred"
   # death_occurred:
