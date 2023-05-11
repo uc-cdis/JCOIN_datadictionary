@@ -22,10 +22,10 @@ systemProperties:
   - state
 
 links:
-  - name: protocols
+  - name: project
     backref: participants
     label: recruited_at
-    target_type: protocol
+    target_type: project
     multiplicity: many_to_one
     required: true
 
