@@ -302,6 +302,17 @@ hispanic:
     - "No"
     - "Not reported"
 
+quarterType:
+  description: >
+    The quarter and year in which recruited for first study in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
+  
+    > Note, this is equivalent to `quarter_enrolled` in the core measure baseline schema. 
+  oneOf:
+    - type: string
+      pattern: \d\d\d\dQ[1234]
+    - enum:
+      - Not reported
+
 parent_node:
     $ref: "#/to_one"
     description: >
