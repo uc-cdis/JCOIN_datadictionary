@@ -11,6 +11,9 @@ description: >
   Keeps track of the number of people enrolled in a study (i.e., **number of people with
   individual level data** and excluding studies providing only aggregate administrative data).
 
+  > IMPORTANT: this node was created to allow the JDC homepage to specifically track the subset
+   of participants with individual level data (ie data not synthetically created from marginal distributions)
+
 additionalProperties: false
 submittable: true
 validators: null

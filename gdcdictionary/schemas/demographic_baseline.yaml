@@ -69,19 +69,7 @@ properties:
       - "Not reported"
 
   race:
-    description: >
-      What is your race? This question comes from the D3 core measure item. 
-      However, given an individual can be more than one race category, for reporting,
-      we added an additional multiracial category. (variable used for reporting only)
-    enum:
-      - White
-      - Black or African American
-      - American Indian or Alaska Native 
-      - Native Hawaiian or Other Pacific Islander
-      - Asian
-      - Some other race
-      - Multiracial
-      - Not reported
+    $ref: "_definitions.yaml#/race"
 
   hispanic:
     $ref: "_definitions.yaml#/hispanic"

@@ -284,29 +284,25 @@ ubiquitous_properties:
 
 race:
   description: >
-    What is your race? SELECT ALL THAT APPLY
+    The racial identity of the participant.
   enum:
     - White
     - Black or African American
-    - American Indian or Alaska Native (SPECIFY principal tribe or community)
+    - American Indian or Alaska Native
     - Native Hawaiian or Other Pacific Islander
     - Asian
-    - Some other race (SPECIFY)
+    - Some other race
     - Not reported
 
 hispanic:
   description: >
-    Are you of Hispanic, Latino, or Spanish origin?
+    Hispanic, Latino, or Spanish origin
   enum:
     - "Yes"
     - "No"
     - "Not reported"
 
 quarterType:
-  description: >
-    The quarter and year in which recruited for first study in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
-  
-    > Note, this is equivalent to `quarter_enrolled` in the core measure baseline schema. 
   oneOf:
     - type: string
       pattern: \d\d\d\dQ[1234]

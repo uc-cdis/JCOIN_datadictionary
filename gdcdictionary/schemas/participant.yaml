@@ -85,14 +85,16 @@ properties:
       - 'Dropped out'
       - 'Withdrawn by investigator'
       - 'Completed study'
+      - 'Unknown'
   
   state_of_client_enrollment:
     description: >
-      State where client was enrolled
+      State where client was enrolled (e.g., state abbreviation such as IL,MO,etc)
 
       > Equivalent to `state_of_site_enrollment` in core measure baseline schema.
     
     type: string
+    pattern: "[A-Z][A-Z]"
 
   projects:
       $ref: "_definitions.yaml#/to_one_project"
