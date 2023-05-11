@@ -58,6 +58,10 @@ properties:
   type: 
     type: string
 
+  date_file_updated:
+    description: Date the file was created from the indexd record.
+    type: date
+
   data_category:
     description: >
       Broad categorization of the contents of the data file.
