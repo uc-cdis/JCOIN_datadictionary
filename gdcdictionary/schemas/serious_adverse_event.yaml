@@ -1,0 +1,188 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "serious_adverse_event"
+title: Serious Adverse Event
+type: object
+namespace: https://jcoin.datacommons.io/dd
+category: administrative
+program: '*'
+project: '*'
+description: >
+  The most up to date information pertaining to a single SAE. 
+  For example, if an SAE is submitted and the a follow up form is submitted with more up to date
+  information, this node will capture the most up to date information. 
+#However,
+#all files (ie initial and follow ups will be stored in a child node called serious_adverse_event_files)
+#Generated through the serious adverse event workflow node
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+
+#only need up to date info (so one link to protocol) del the files/workflows
+# links:
+#   - exclusive: false
+#     required: true
+#     subgroup:
+#     - name: protocols
+#       backref: saes
+#       label: recorded_at
+#       target_type: protocol
+#       multiplicity: many_to_one
+#       required: true
+#     - name: sae_workflows
+#       backref: saes
+#       label: data_from
+#       target_type: sae_workflow
+#       multiplicity: many_to_one
+#     - name: sae_files
+#       backref: saes
+#       label: data_from
+#       target_type: sae_file
+#       multiplicity: one_to_many
+links:
+  - name: protocols
+    backref: saes
+    label: recorded_at
+    target_type: protocol
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - protocols
+  - quarter_of_sae
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    type: string
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  state:
+    $ref: "_definitions.yaml#/state"
+  #REDCAP ids
+  submitter_id:
+    type:
+      - string
+      - "null"
+  protocols:
+    $ref: "_definitions.yaml#/parent_node"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  # is_final_report:
+  #   description:
+  #     If this is the finalized report? (option on follow up form)
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+  quarter_of_sae:
+    type: string #change to number when we figure out how missing/null vals are coded
+    description: >
+      The quarter and year in which serious adverse event was recorded XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
+    type: string
+  #propreties with suffix of "_occurred" are a part of
+  # "Check which of the following occurred"
+  # death_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+
+  # life_threatening_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+  # hospitalization_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+  # disability_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+
+  # birth_defect_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+
+  # required_treatment_occurred:
+  #   enum:
+  #     - 'Yes'
+  #     - 'No'
+  #     - Not reported
+
+  is_related_to_study:
+    description: >
+      Is this serious adverse event related to the study?
+
+      Note,  "Possible" means:
+      There is a reasonable possibility that 
+      the incident, experience, or outcome may have been 
+      caused by the procedures involved in the research. 
+    enum:
+      - 'None'
+      - Unlikely
+      - Possible
+      - Probable
+      - Definite
+  was_expected:
+    description: >
+      Expected or unexpected?
+      Note, "Unexpected" means unexpected in nature, severity, or frequency given
+      (a) the research procedures that are described in the protocol-related documents 
+      and informed consent document and 
+      (b) the characteristics of the population being studied.
+
+    enum:
+      - Expected
+      - Unexpected
+      - Not reported
+  #get hubs who are taking MOUD intervention
+  on_opioid_medication:
+    description: >
+      Was client taking a medication for opioid use disorder (MOUD)?
+      This is derived from hubs who are are using MOUD intervention.
+    enum:
+      - 'Yes'
+      - 'No'
+      - Not reported
+
+#identical fields in demographic.yaml. *Gender is slightly different than any of the fields
+  gender:
+    descriptions: >
+      gender identity of client with SAE
+    enum:
+      - Female
+      - Male
+      - Non-binary
+
+  race:
+    $ref: "_definitions.yaml#/race"
+      
+
+  hispanic:
+    $ref: "_definitions.yaml#/hispanic"
+
+    
