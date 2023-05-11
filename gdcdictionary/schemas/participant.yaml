@@ -32,7 +32,7 @@ links:
 required:
   - submitter_id
   - type
-  - protocols
+  - projects
   - role_in_project
   - quarter_recruited
 
@@ -57,8 +57,6 @@ properties:
     type: array
     items:
       type: string
-  protocols:
-    $ref: "_definitions.yaml#/parent_node"
   project_id:
     $ref: "_definitions.yaml#/project_id"
   created_datetime:
@@ -95,3 +93,6 @@ properties:
       > Equivalent to `state_of_site_enrollment` in core measure baseline schema.
     
     type: string
+
+  projects:
+      $ref: "_definitions.yaml#/to_one_project"

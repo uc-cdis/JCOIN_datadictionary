@@ -25,15 +25,15 @@ systemProperties:
   - updated_datetime
   - state
 
-#only need up to date info (so one link to protocol) del the files/workflows
+#only need up to date info (so one link to project) del the files/workflows
 # links:
 #   - exclusive: false
 #     required: true
 #     subgroup:
-#     - name: protocols
+#     - name: projects
 #       backref: saes
 #       label: recorded_at
-#       target_type: protocol
+#       target_type: project
 #       multiplicity: many_to_one
 #       required: true
 #     - name: sae_workflows
@@ -47,17 +47,17 @@ systemProperties:
 #       target_type: sae_file
 #       multiplicity: one_to_many
 links:
-  - name: protocols
+  - name: projects
     backref: saes
     label: recorded_at
-    target_type: protocol
+    target_type: project
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - protocols
+  - projects
   - quarter_of_sae
 
 uniqueKeys:
@@ -77,8 +77,6 @@ properties:
     type:
       - string
       - "null"
-  protocols:
-    $ref: "_definitions.yaml#/parent_node"
   project_id:
     $ref: "_definitions.yaml#/project_id"
   created_datetime:
@@ -150,7 +148,7 @@ properties:
     description: >
       Expected or unexpected?
       Note, "Unexpected" means unexpected in nature, severity, or frequency given
-      (a) the research procedures that are described in the protocol-related documents 
+      (a) the research procedures that are described in the project-related documents 
       and informed consent document and 
       (b) the characteristics of the population being studied.
 
@@ -184,4 +182,5 @@ properties:
   hispanic:
     $ref: "_definitions.yaml#/hispanic"
 
-    
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
