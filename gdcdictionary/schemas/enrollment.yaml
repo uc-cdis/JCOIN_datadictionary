@@ -8,8 +8,8 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  Keeps track of the number of people enrolled in a study (i.e., number of people with
-  individual level data and excluding studies providing only aggregate administrative data).
+  Keeps track of the number of people enrolled in a study (i.e., **number of people with
+  individual level data** and excluding studies providing only aggregate administrative data).
 
 additionalProperties: false
 submittable: true

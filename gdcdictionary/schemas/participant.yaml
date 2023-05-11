@@ -68,7 +68,10 @@ properties:
   quarter_recruited:
     type: string #change to number when we figure out how missing/null vals are coded
     description: >
-      The quarter and year in which recruited for first study in the format of XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).
+      The quarter and year in which recruited for first study in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
+    
+      > Note, this is equivalent to `quarter_enrolled` in the core measure baseline schema. 
+    
   role_in_project:
     description: >
       Are they a client or research staff?
@@ -78,6 +81,8 @@ properties:
   current_client_status:
     description: >
       What is the current status of the client?
+
+      > Equivalent to `current_study_status` in baseline core measure schema. 
     enum:
       - 'On study'
       - 'Dropped out'
@@ -87,4 +92,7 @@ properties:
   state_of_client_enrollment:
     description: >
       State where client was enrolled
+
+      > Equivalent to `state_of_site_enrollment` in core measure baseline schema.
+    
     type: string
