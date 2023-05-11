@@ -8,7 +8,7 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  Demographic data collected only at baseline and additional fields formatted specifically for reporting purposes.
+  Demographic data for reporting purposes. Taken from the baseline core measure data.
 
 additionalProperties: false
 submittable: true

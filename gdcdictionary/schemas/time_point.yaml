@@ -8,9 +8,7 @@ category: clinical
 program: '*'
 project: '*'
 description: >
-  Some measures are collected at all time points (e.g., both baseline and follow ups).
-  This node captures information related to a time point. The nodes (ie sections) below
-  this node are collected at follow up and baseline time points.
+  Measures collected at multiple time points (baseline and follow ups)
 additionalProperties: false
 submittable: true
 validators: null
@@ -49,7 +47,7 @@ properties:
 
   visit_number:
     description: >
-      Visit number
+      Visit number representing the intended visit number as stated in the protocol.
     type: integer
     
   # visit_id:
@@ -57,11 +55,19 @@ properties:
   #     ID at time of interview (prior to transfer)
   #   type: integer
 
-  visit_name:
+  visit_month:
     description: >
-      The formatted name of the visit such as Baseline,
-      1 month follow up, 12 month follow up etc.
+      The formatted name of the visit. This may Baseline
+      or a month Follow-up (e.g., 1 month, 2 month...24 month).
+      
+      > Note, this does not correspond to the actual month of the visit. 
+      Rather, it corresponds to the intended visit month. For example,
+      if a study has a 3 month visit but the participant could not 
+      come in until 4 months after baseline, this will still be called "3 month."
+
+      To get an exact time since baseline, see `days_from_baseline_session`.
     type: string
+    pattern: Baseline|^\d+ month$
 
   visit_type:
     description: >
