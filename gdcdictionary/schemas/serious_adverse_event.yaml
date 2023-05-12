@@ -166,10 +166,10 @@ properties:
       - 'No'
       - Not reported
 
-#identical fields in demographic.yaml. *Gender is slightly different than any of the fields
   gender:
     descriptions: >
-      gender identity of client with SAE
+      Gender identity of client with SAE. Note, the SAE gender categories are slightly different 
+      than the core measure genders (or the demographic node for gender)
     enum:
       - Female
       - Male

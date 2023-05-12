@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "demographic_baseline"
-title: Demographic - Baseline and Reporting
+id: "demographic"
+title: Demographic
 type: object
 namespace: https://jcoin.datacommons.io/dd
 category: clinical
@@ -58,8 +58,8 @@ properties:
 
   gender: 
     description: >
-      What is your gender identity? The core measures specify either item O2 or D4b can be used. If O2 used, 
-      records are mapped onto D4b for reporting purposes. (variable used for reporting only)
+      The gender the participant identifies with. The core measures specify either item O2 or D4b can be used. If O2 used, 
+      records are mapped onto D4b for reporting purposes. 
     enum:
       - "Male"
       - "Female"
