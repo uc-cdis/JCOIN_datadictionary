@@ -97,4 +97,4 @@ properties:
     pattern: "[A-Z][A-Z]"
 
   projects:
-      $ref: "_definitions.yaml#/to_one_project"
+      $ref: "_definitions.yaml#/to_many_project"

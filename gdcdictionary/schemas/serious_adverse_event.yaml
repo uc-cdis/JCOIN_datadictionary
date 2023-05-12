@@ -183,4 +183,4 @@ properties:
     $ref: "_definitions.yaml#/hispanic"
 
   projects:
-    $ref: "_definitions.yaml#/to_one_project"
+      $ref: "_definitions.yaml#/to_many_project"
