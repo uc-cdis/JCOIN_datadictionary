@@ -59,8 +59,9 @@ properties:
     type: string
 
   date_file_updated:
-    description: Date the file was created from the indexd record.
-    type: date
+    description: Date the file was created from the indexd record with pattern yearmonthday (eg. 20200411 for April 11 2020)
+    type: integer
+    pattern: "[0-9]{8}"
 
   data_category:
     description: >
