@@ -22,7 +22,7 @@ systemProperties:
   - state
 
 links:
-  - name: project
+  - name: projects
     backref: participants
     label: recruited_at
     target_type: project
