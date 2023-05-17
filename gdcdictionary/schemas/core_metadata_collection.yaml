@@ -48,8 +48,15 @@ properties:
 
   coverage:
     description: >
-      State(s) from where the data are collected.
-    type: string # change to array or array-like etc
+      State(s) from where the data are collected. Must
+      be a valid state abbreviation or if not in the USA,
+      one can specify "Other" or if intended to be a national sample
+      can specify "National".
+    type: array
+    items:
+      oneOf:
+        - $ref: "_definitions.yaml/#/stateAbbreviations"
+        - enum: [Other,National,Not applicable]
 
   creator:
     description: >
