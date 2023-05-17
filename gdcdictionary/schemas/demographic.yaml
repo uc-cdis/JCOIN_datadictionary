@@ -1,18 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "enrollment"
-title: Enrollment
+id: "demographic"
+title: Demographic
 type: object
 namespace: https://jcoin.datacommons.io/dd
 category: clinical
 program: '*'
 project: '*'
 description: >
-  Keeps track of the number of people enrolled in a study (i.e., **number of people with
-  individual level data** and excluding studies providing only aggregate administrative data).
-
-  > IMPORTANT: this node was created to allow the JDC homepage to specifically track the subset
-   of participants with individual level data (ie data not synthetically created from marginal distributions)
+  Demographic data for reporting purposes. Taken from the baseline core measure data.
 
 additionalProperties: false
 submittable: true
@@ -27,7 +23,7 @@ systemProperties:
 
 links:
   - name: participants
-    backref: enrollments
+    backref: demographics
     label: describes
     target_type: participant
     multiplicity: one_to_one
@@ -36,6 +32,10 @@ links:
 required:
   - submitter_id
   - type
+  - participants 
+  - gender
+  - race
+  - hispanic
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
@@ -55,6 +55,25 @@ properties:
     type:
       - string
       - "null"
+
+  gender: 
+    description: >
+      The gender the participant identifies with. The core measures specify either item O2 or D4b can be used. If O2 used, 
+      records are mapped onto D4b for reporting purposes. 
+    enum:
+      - "Male"
+      - "Female"
+      - "Transgender"
+      - "Gender nonconforming"
+      - "Something else"
+      - "Not reported"
+
+  race:
+    $ref: "_definitions.yaml#/race"
+
+  hispanic:
+    $ref: "_definitions.yaml#/hispanic"
+
   participants:
     $ref: "_definitions.yaml#/parent_node"
   project_id:

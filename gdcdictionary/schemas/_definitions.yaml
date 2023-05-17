@@ -281,30 +281,93 @@ ubiquitous_properties:
   updated_datetime:
     $ref: "#/datetime"
 
-
-race:
-  description: >
-    What is your race? SELECT ALL THAT APPLY
-  enum:
-    - White
-    - Black or African American
-    - American Indian or Alaska Native (SPECIFY principal tribe or community)
-    - Native Hawaiian or Other Pacific Islander
-    - Asian
-    - Some other race (SPECIFY)
-    - Not reported
-
-hispanic:
-  description: >
-    Are you of Hispanic, Latino, or Spanish origin?
-  enum:
-    - "Yes"
-    - "No"
-    - "Not reported"
-
 parent_node:
     $ref: "#/to_one"
     description: >
       References to the parent node. Usually, submissions (e.g., a TSV file of records for this node) 
       include the field <parent node name>.submitter_id 
       to link records from this node to records from the parent node. 
+
+
+
+race:
+  description: >
+    The racial identity of the participant.
+  enum:
+    - White
+    - Black or African American
+    - American Indian or Alaska Native
+    - Native Hawaiian or Other Pacific Islander
+    - Asian
+    - Some other race
+    - Not reported
+
+hispanic:
+  description: >
+    Hispanic, Latino, or Spanish origin
+  enum:
+    - "Yes"
+    - "No"
+    - "Not reported"
+
+quarterType:
+  oneOf:
+    - type: string
+      pattern: \d\d\d\dQ[1234]
+    - enum:
+      - Not reported
+
+
+stateAbbreviations:
+  enum:
+  - AL
+  - AK
+  - AZ
+  - AR
+  - CA
+  - CO
+  - CT
+  - DE
+  - DC
+  - FL
+  - GA
+  - HI
+  - ID
+  - IL
+  - IN
+  - IA
+  - KS
+  - KY
+  - LA
+  - ME
+  - MD
+  - MA
+  - MI
+  - MN
+  - MS
+  - MO
+  - MT
+  - NE
+  - NV
+  - NH
+  - NJ
+  - NM
+  - NY
+  - NC
+  - ND
+  - OH
+  - OK
+  - OR
+  - PA
+  - RI
+  - SC
+  - SD
+  - TN
+  - TX
+  - UT
+  - VT
+  - VA
+  - WA
+  - WV
+  - WI
+  - WY

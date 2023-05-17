@@ -8,7 +8,8 @@ project: '*'
 category: administrative
 description: >
   Any specifically defined piece of work that is undertaken or attempted to meet a single
-  requirement. (NCIt C47885)
+  requirement. This can be a JCOIN study project, a project consisting of collection of files from a 
+  specific repository or source, or a collaborative project etc.
 additionalProperties: false
 submittable: true
 validators: null
