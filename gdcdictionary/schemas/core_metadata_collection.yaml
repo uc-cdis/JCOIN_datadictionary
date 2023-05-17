@@ -54,7 +54,7 @@ properties:
     type: array
     items:
       oneOf:
-        - $ref: "_definitions.yaml/#/stateAbbreviations"
+        - $ref: "_definitions.yaml#/stateAbbreviations"
         - enum: [Other,National,Not applicable]
   creator:
     description: >
