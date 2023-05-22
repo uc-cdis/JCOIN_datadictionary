@@ -69,15 +69,13 @@ properties:
     $ref: "_definitions.yaml#/quarterType"
   role_in_project:
     description: >
-      Are they a client or research staff?
+      The role in which the participant plays in the project: either a client or staff participant.
     enum:
       - 'Client'
       - 'Staff'
-  current_client_status:
+  current_study_status:
     description: >
-      What is the current status of the client?
-
-      > Equivalent to `current_study_status` in baseline core measure schema. 
+      The current status within the given study for the participant.
     enum:
       - 'On study'
       - 'Dropped out'
@@ -85,12 +83,9 @@ properties:
       - 'Completed study'
       - 'Unknown'
   
-  state_of_client_enrollment:
+  state_of_enrollment:
     description: >
-      State where client was enrolled (e.g., state abbreviation such as IL,MO,etc)
-
-      > Equivalent to `state_of_site_enrollment` in core measure baseline schema.
-    
+      State where client was enrolled (e.g., state abbreviation such as IL,MO,etc)    
     type: string
     pattern: "[A-Z][A-Z]"
 
