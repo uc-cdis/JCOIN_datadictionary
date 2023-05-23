@@ -34,7 +34,7 @@ required:
   - type
   - projects
   - role_in_project
-  - quarter_recruited
+  - quarter_enrolled
 
 uniqueKeys:
   - [id]
