@@ -33,9 +33,9 @@ required:
   - submitter_id
   - type
   - participants 
-  - gender
+  - gender_identity
   - race
-  - hispanic
+  - hispanic_latino
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
@@ -56,7 +56,7 @@ properties:
       - string
       - "null"
 
-  gender: 
+  gender_identity: 
     description: >
       The gender the participant identifies with. The core measures specify either item O2 or D4b can be used. If O2 used, 
       records are mapped onto D4b for reporting purposes. 
@@ -71,7 +71,7 @@ properties:
   race:
     $ref: "_definitions.yaml#/race"
 
-  hispanic:
+  hispanic_latino:
     $ref: "_definitions.yaml#/hispanic"
 
   participants:
