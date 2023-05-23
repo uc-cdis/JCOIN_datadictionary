@@ -33,7 +33,7 @@ required:
   - submitter_id
   - type
   - participants 
-  - gender_identity
+  - gender_id_condensed
   - race
   - hispanic_latino
 uniqueKeys:
@@ -56,7 +56,7 @@ properties:
       - string
       - "null"
 
-  gender_identity: 
+  gender_id_condensed: 
     description: >
       The gender the participant identifies with. The core measures specify either item O2 or D4b can be used. If O2 used, 
       records are mapped onto D4b for reporting purposes. 
