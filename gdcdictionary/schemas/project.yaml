@@ -128,3 +128,13 @@ properties:
   dbgap_accession_number:
     type: string
     description: "The dbgap accession number provided for the project."
+
+  protocol:
+    description: |
+      If a JCOIN hub study, the category of study as defined by Ducharme et al., 2021.
+      Journal of Substance Abuse Treatment publication. 
+    enum:
+      - "State Policy Rollouts"
+      - "MOUD Comparative Effectiveness"
+      - "Linkage"
+      - "Organizational Implementation"
