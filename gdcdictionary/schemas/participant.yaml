@@ -69,7 +69,8 @@ properties:
     $ref: "_definitions.yaml#/quarterType"
   role_in_project:
     description: >
-      The role in which the participant plays in the project: either a client or staff participant.
+      The participant's role in the project: either staff (e.g., Court Coordinator, Judge, Law Enforcement, Lawyer, Peer, Treatment) or 
+      the client (i.e., the individual receiving the study's services/treatment)
     enum:
       - 'Client'
       - 'Staff'
