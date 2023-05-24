@@ -34,7 +34,7 @@ required:
   - type
   - projects
   - role_in_project
-  - quarter_recruited
+  - quarter_enrolled
 
 uniqueKeys:
   - [id]
@@ -63,23 +63,20 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"
-  quarter_recruited:
+  quarter_enrolled:
     description: >
-      The quarter and year in which recruited for first study in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
-    
-      > Note, this is equivalent to `quarter_enrolled` in the core measure baseline schema. 
+      The quarter and year in which the participant enrolled in the study (in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
     $ref: "_definitions.yaml#/quarterType"
   role_in_project:
     description: >
-      Are they a client or research staff?
+      The participant's role in the project: either staff (e.g., Court Coordinator, Judge, Law Enforcement, Lawyer, Peer, Treatment) or 
+      the client (i.e., the individual receiving the study's services/treatment)
     enum:
       - 'Client'
       - 'Staff'
-  current_client_status:
+  current_study_status:
     description: >
-      What is the current status of the client?
-
-      > Equivalent to `current_study_status` in baseline core measure schema. 
+      The current status within the given study for the participant.
     enum:
       - 'On study'
       - 'Dropped out'
@@ -87,12 +84,9 @@ properties:
       - 'Completed study'
       - 'Unknown'
   
-  state_of_client_enrollment:
+  state_of_enrollment:
     description: >
-      State where client was enrolled (e.g., state abbreviation such as IL,MO,etc)
-
-      > Equivalent to `state_of_site_enrollment` in core measure baseline schema.
-    
+      State where client was enrolled (e.g., state abbreviation such as IL,MO,etc)    
     type: string
     pattern: "[A-Z][A-Z]"
 

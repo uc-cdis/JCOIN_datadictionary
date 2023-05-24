@@ -71,11 +71,11 @@ properties:
 
   visit_type:
     description: >
-      Define if the visit is a follow-up or the baseline visit.
+      Define if the visit is a "Follow-up" or a "Baseline" visit (or Not applicable)
     enum:
-      - Baseline Visit
-      - Follow-up Visit
-      - Abbreviated Visit (Record in ABRV file)
+      - Baseline
+      - Follow-up
+      - Not applicable
 
   shifted_visit_dt:
     description: >
