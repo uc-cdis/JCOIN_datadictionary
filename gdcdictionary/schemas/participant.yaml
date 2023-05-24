@@ -65,7 +65,7 @@ properties:
     $ref: "_definitions.yaml#/datetime"
   quarter_enrolled:
     description: >
-      The quarter and year in which recruited for first study in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
+      The quarter and year in which the participant enrolled in the study (in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).
     $ref: "_definitions.yaml#/quarterType"
   role_in_project:
     description: >
